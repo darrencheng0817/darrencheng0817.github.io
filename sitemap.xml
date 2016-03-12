@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://darrencheng0817.github.io/me/index.html</loc>
+    
+    <lastmod>2016-03-12T05:27:04.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://darrencheng0817.github.io/about/index.html</loc>
+    
+    <lastmod>2016-03-12T05:20:08.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://darrencheng0817.github.io/2016/03/11/First-post/</loc>
     
     <lastmod>2016-03-12T02:26:49.000Z</lastmod>
@@ -9,23 +23,9 @@
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/categories/index.html</loc>
-    
-    <lastmod>2016-03-12T01:45:31.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://darrencheng0817.github.io/tags/index.html</loc>
     
     <lastmod>2016-03-12T01:41:40.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://darrencheng0817.github.io/about/index.html</loc>
-    
-    <lastmod>2016-03-12T01:41:05.000Z</lastmod>
     
   </url>
   
