@@ -132,11 +132,13 @@
                     <nav class="header-nav">
                         <ul class="social">
                             
-                                <li id="Email"><a class="Email" target="_blank" href="mailto:darrenlife.com" title="Email"></a></li>
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:&#100;&#97;&#114;&#114;&#101;&#110;&#99;&#104;&#101;&#110;&#103;&#48;&#56;&#49;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" title="Email"></a></li>
                             
-                                <li id="GitHub"><a class="GitHub" target="_blank" href="#" title="GitHub"></a></li>
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/darrencheng0817" title="GitHub"></a></li>
                             
-                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                                <li id="Facebook"><a class="Facebook" target="_blank" href="https://www.facebook.com/darrencheng0817" title="Facebook"></a></li>
+                            
+                                <li id="LinkedIn"><a class="LinkedIn" target="_blank" href="https://www.linkedin.com/in/darrencheng0817" title="LinkedIn"></a></li>
                             
                         </ul>
                     </nav>
@@ -208,11 +210,13 @@
             <nav class="header-nav">
                         <ul class="social">
                             
-                                <li id="Email"><a class="Email" target="_blank" href="mailto:darrenlife.com" title="Email"></a></li>
+                                <li id="Email"><a class="Email" target="_blank" href="mailto:&#100;&#97;&#114;&#114;&#101;&#110;&#99;&#104;&#101;&#110;&#103;&#48;&#56;&#49;&#55;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;" title="Email"></a></li>
                             
-                                <li id="GitHub"><a class="GitHub" target="_blank" href="#" title="GitHub"></a></li>
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/darrencheng0817" title="GitHub"></a></li>
                             
-                                <li id="RSS"><a class="RSS" target="_blank" href="/atom.xml" title="RSS"></a></li>
+                                <li id="Facebook"><a class="Facebook" target="_blank" href="https://www.facebook.com/darrencheng0817" title="Facebook"></a></li>
+                            
+                                <li id="LinkedIn"><a class="LinkedIn" target="_blank" href="https://www.linkedin.com/in/darrencheng0817" title="LinkedIn"></a></li>
                             
                         </ul>
             </nav>
@@ -236,19 +240,23 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
           <div class="article-meta">
-              <a href="/2016/03/11/hello-world/" class="archive-article-date">
-      <time datetime="2016-03-11T19:48:57.000Z" itemprop="datePublished">03-11</time>
+              <a href="/2016/03/11/First-post/" class="archive-article-date">
+      <time datetime="2016-03-12T00:57:00.000Z" itemprop="datePublished">03-11</time>
 </a>
         </div>
          
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/03/11/hello-world/">Hello World</a>
+      <a class="archive-article-title" href="/2016/03/11/First-post/">First post</a>
     </h1>
   
 
         <div class="article-info info-on-archive">
           
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/other/">other</a>
+    </div>
+
 
           
         </div>
@@ -310,7 +318,7 @@
                 $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
             }
             else {
-                var backgroundnum = 5;
+                var backgroundnum = 10;
                 var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
                 $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
             }
@@ -318,6 +326,27 @@
     </script>
 
 
+
+
+    <script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
 
 <div class="scroll" id="scroll">
