@@ -55,6 +55,49 @@
   
     
     <entry>
+      <title><![CDATA[404]]></title>
+      <url>http://darrencheng0817.github.io//404.html</url>
+      <content type="html"><![CDATA[<hr>
+<p><style type="text/css"><br>    .article-header {<br>        padding: 0;<br>        padding-top: 26px;<br>        border-left: none;<br>        text-align: center;<br>    }<br>    .article-header:hover {<br>        border-left: none;<br>    }<br>    .article-title {<br>        font-size: 2.1em;<br>    }<br>    strong a {<br>        color: #747474;<br>    }<br>    .article-meta {<br>        display: none;<br>    }<br>    .share {<br>        display: none;<br>    }<br>    .ds-meta {<br>        display: none;<br>    }<br>    .player {<br>        margin-left: -10px;<br>    }<br>    .sign {<br>        text-align: right;<br>        font-style: italic;<br>    }</p>
+<pre><code>  #page-visit {
+    display: none;
+}
+.center {
+    text-align: center;
+    height: 2.5em;
+    font-weight: bold;
+}
+.article-entry hr {
+    margin: 0;
+}
+.pic {
+    text-align: center;
+    margin: 0;
+}
+.pic br {
+      display: none;
+  }
+#container .article-info-post.article-info {
+  display: none;
+  }
+#container .article .article-title {
+padding: 0;
+}
+.share{
+    display: none;
+}
+</code></pre><p></style></p>
+<p><div style="text-align:center"><br><img src="/images/404.png" alt="404" width="400" hight="200"><br></div></p>
+<h2 id="Search-what-you-want"><a href="#Search-what-you-want" class="headerlink" title="Search what you want"></a>Search what you want</h2><p><div style="text-align: center"><br>    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search articles here!" style="margin-bottom:1em;width:100%"><br></div></p>
+<p><div id="local-search-result"></div></p>
+<script src="/js/search.js"></script> 
+<script type="text/javascript">      
+ var path = "/search.xml";
+ searchFunc(path, 'local-search-input', 'local-search-result');
+</script>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Search]]></title>
       <url>http://darrencheng0817.github.io/Search/index.html</url>
       <content type="html"><![CDATA[<h2 id="Search-what-you-want"><a href="#Search-what-you-want" class="headerlink" title="Search what you want"></a>Search what you want</h2><p><div style="text-align: center"><br>    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search articles here!" style="margin-bottom:1em;width:100%"><br></div></p>
@@ -72,31 +115,34 @@
       <content type="html"><![CDATA[<hr>
 <p>The site was built on Mar.11, 2016 using <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>, which is a node.js framework. The website is hosted both on github pages and coding.net (For chinese visitors). So for visitors in China, please go to the <a href="http://darrencheng.coding.me/" target="_blank" rel="external">mirror site</a> which is faster.</p>
 <a id="more"></a>
-<h1 id="History"><a href="#History" class="headerlink" title="History"></a>History</h1><h2 id="3-11-2016-Theme-amp-Host"><a href="#3-11-2016-Theme-amp-Host" class="headerlink" title="[3/11/2016] Theme &amp; Host"></a>[3/11/2016] Theme &amp; Host</h2><ol>
-<li>Hexo theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">Yelee</a> was used.</li>
-<li>The website was hosted both on github pages and coding.net</li>
+<h1 id="History"><a href="#History" class="headerlink" title="History"></a>History</h1><h2 id="3-14-2016-Custom-404"><a href="#3-14-2016-Custom-404" class="headerlink" title="[3/14/2016] Custom 404"></a>[3/14/2016] Custom 404</h2><ol>
+<li>Added custom 404 page.</li>
+</ol>
+<h2 id="3-13-2016-Top-amp-Search"><a href="#3-13-2016-Top-amp-Search" class="headerlink" title="[3/13/2016] Top &amp; Search"></a>[3/13/2016] Top &amp; Search</h2><ol>
+<li>Added top function, modified generator.js to sort posts first by top value, then date. Advised by <a href="http://www.netcan666.com/2015/11/22/%E8%A7%A3%E5%86%B3Hexo%E7%BD%AE%E9%A1%B6%E9%97%AE%E9%A2%98/" target="_blank" rel="external">Netcan</a>.</li>
+<li>Added Search function.</li>
 </ol>
 <h2 id="3-12-2016-Custom-domain"><a href="#3-12-2016-Custom-domain" class="headerlink" title="[3/12/2016] Custom domain"></a>[3/12/2016] Custom domain</h2><ol>
 <li>Modified DNS, created A record, pointing subdomain blog.darrenlife.com to github pages.</li>
 <li>My nameserver(NS) could not differentiate traffice from China or overseas, so the mirror site for Chinese visitors will use address of <a href="http://darrencheng.coding.me" target="_blank" rel="external">darrencheng.coding.me</a></li>
 <li>Added js script on my <a href="http://darrenlife.com" target="_blank" rel="external">front page</a> to identify visitors’ location, redirect them to China mirror site if they come from China.</li>
 </ol>
-<h2 id="3-13-2016-Top"><a href="#3-13-2016-Top" class="headerlink" title="[3/13/2016] Top"></a>[3/13/2016] Top</h2><ol>
-<li>Added top function, modified generator.js to sort posts first by top value, then data. Advised by <a href="http://www.netcan666.com/2015/11/22/%E8%A7%A3%E5%86%B3Hexo%E7%BD%AE%E9%A1%B6%E9%97%AE%E9%A2%98/" target="_blank" rel="external">Netcan</a>.</li>
-<li>Added Search function.</li>
+<h2 id="3-11-2016-Theme-amp-Host"><a href="#3-11-2016-Theme-amp-Host" class="headerlink" title="[3/11/2016] Theme &amp; Host"></a>[3/11/2016] Theme &amp; Host</h2><ol>
+<li>Hexo theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" rel="external">Yelee</a> was used.</li>
+<li>The website was hosted both on github pages and coding.net</li>
 </ol>
 ]]></content>
     </entry>
     
     <entry>
-      <title><![CDATA[Me]]></title>
-      <url>http://darrencheng0817.github.io/me/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>http://darrencheng0817.github.io/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://darrencheng0817.github.io/tags/index.html</url>
+      <title><![CDATA[Me]]></title>
+      <url>http://darrencheng0817.github.io/me/index.html</url>
       <content type="html"></content>
     </entry>
     
