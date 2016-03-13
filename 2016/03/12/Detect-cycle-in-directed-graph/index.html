@@ -5,20 +5,17 @@
   
   <title>Detect cycle in directed graph | DarrenLife</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Detecting cycle in undirected graph has been discussed in the previous post. Now let’s see what happened if it is a directed graph.
-ProblemThe original BFS and DFS are not working here. Consider the">
+  <meta name="description" content="Detecting cycle in undirected graph has been discussed in the previous post. Now let’s see what happened if it is a directed graph.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Detect cycle in directed graph">
 <meta property="og:url" content="http://darrencheng0817.github.io/2016/03/12/Detect-cycle-in-directed-graph/index.html">
 <meta property="og:site_name" content="DarrenLife">
-<meta property="og:description" content="Detecting cycle in undirected graph has been discussed in the previous post. Now let’s see what happened if it is a directed graph.
-ProblemThe original BFS and DFS are not working here. Consider the">
+<meta property="og:description" content="Detecting cycle in undirected graph has been discussed in the previous post. Now let’s see what happened if it is a directed graph.">
 <meta property="og:image" content="http://darrencheng0817.github.io/images/2016_3_12/1.png">
-<meta property="og:updated_time" content="2016-03-13T08:19:35.000Z">
+<meta property="og:updated_time" content="2016-03-13T08:29:24.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Detect cycle in directed graph">
-<meta name="twitter:description" content="Detecting cycle in undirected graph has been discussed in the previous post. Now let’s see what happened if it is a directed graph.
-ProblemThe original BFS and DFS are not working here. Consider the">
+<meta name="twitter:description" content="Detecting cycle in undirected graph has been discussed in the previous post. Now let’s see what happened if it is a directed graph.">
 <meta name="twitter:image" content="http://darrencheng0817.github.io/images/2016_3_12/1.png">
   
     <link rel="alternative" href="/atom.xml" title="DarrenLife" type="application/atom+xml">
@@ -280,7 +277,7 @@ ProblemThe original BFS and DFS are not working here. Consider the">
       
           
         <hr>
-<p>Detecting cycle in undirected graph has been discussed in the <a href="http://blog.darrenlife.com/2016/03/11/Detect-cycle-in-undirected-graph/" target="_blank" rel="external">previous post</a>. Now let’s see what happened if it is a directed graph.</p>
+<p>Detecting cycle in undirected graph has been discussed in the <a href="http://blog.darrenlife.com/2016/03/11/Detect-cycle-in-undirected-graph/" target="_blank" rel="external">previous post</a>. Now let’s see what happened if it is a directed graph.<br><a id="more"></a>  </p>
 <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>The original BFS and DFS are not working here. Consider the following graph:<br><img src="/images/2016_3_12/1.png" alt="Example graph" width="100" hight="200"><br>There is not cycle in the graph, however, if you do a BFS or DFS, you will get wrong answer. Let’s say you do DFS start from A, then A-&gt;B-&gt;C. Then you go to C from A, found that C is already visited. The algorithm will return ture but there is no cycle.</p>
 <h1 id="Modified-DFS"><a href="#Modified-DFS" class="headerlink" title="Modified DFS"></a>Modified DFS</h1><p>DFS can be used to detect cycle in a Graph instead of BFS. Because DFS for a connected graph produces a tree. There is a cycle in a graph only if there is a back edge present in the graph. A back edge is an edge that is from a node to itself (selfloop) or one of its ancestor in the tree produced by DFS. </p>
 <p>To detect a back edge, we can keep track of vertices currently in recursion stack of function for DFS traversal. If we reach a vertex that is already in the recursion stack, then there is a cycle in the tree. The edge that connects current vertex to the vertex in the recursion stack is back edge. We use an array to keep track of vertices in the recursion stack. </p>
@@ -308,7 +305,7 @@ ProblemThe original BFS and DFS are not working here. Consider the">
         <p><span>Title:</span><a href="/2016/03/12/Detect-cycle-in-directed-graph/">Detect cycle in directed graph</a></p>
         <p><span>Author:</span><a href="/" title="Go to Darren Cheng's blog">Darren Cheng</a></p>
         <p><span>Publish Date:</span>03/12/2016 - 23:26</p>
-        <p><span>Update Date:</span>03/13/2016 - 00:19</p>
+        <p><span>Update Date:</span>03/13/2016 - 00:29</p>
         <p>
             <span>Original Like:</span><a class="post-url" href="/2016/03/12/Detect-cycle-in-directed-graph/" title="Detect cycle in directed graph">http://darrencheng0817.github.io/2016/03/12/Detect-cycle-in-directed-graph/</a>
             <span class="copy-path" data-clipboard-text="page: http://darrencheng0817.github.io/2016/03/12/Detect-cycle-in-directed-graph/　　author: Darren Cheng" title="copy the link"><i class="fa fa-clipboard"></i></span>
