@@ -3,17 +3,23 @@
 <head>
   <meta charset="utf-8">
   
-  <title>DarrenLife</title>
+  <title>Detect cycle in directed graph | DarrenLife</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="DarrenLife">
-<meta property="og:url" content="http://darrencheng0817.github.io/index.html">
+  <meta name="description" content="Detecting cycle in undirected graph has been discussed in the previous post. Now let’s see what happened if it is a directed graph.
+ProblemThe original BFS and DFS are not working here. Consider the">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Detect cycle in directed graph">
+<meta property="og:url" content="http://darrencheng0817.github.io/2016/03/12/Detect-cycle-in-directed-graph/index.html">
 <meta property="og:site_name" content="DarrenLife">
-<meta property="og:description">
+<meta property="og:description" content="Detecting cycle in undirected graph has been discussed in the previous post. Now let’s see what happened if it is a directed graph.
+ProblemThe original BFS and DFS are not working here. Consider the">
+<meta property="og:image" content="http://darrencheng0817.github.io/images/2016_3_12/1.png">
+<meta property="og:updated_time" content="2016-03-13T08:19:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="DarrenLife">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Detect cycle in directed graph">
+<meta name="twitter:description" content="Detecting cycle in undirected graph has been discussed in the previous post. Now let’s see what happened if it is a directed graph.
+ProblemThe original BFS and DFS are not working here. Consider the">
+<meta name="twitter:image" content="http://darrencheng0817.github.io/images/2016_3_12/1.png">
   
     <link rel="alternative" href="/atom.xml" title="DarrenLife" type="application/atom+xml">
   
@@ -26,13 +32,8 @@
   
   <link rel="stylesheet" href="/css/style.css">
   
-      <style> .article { opacity: 0;} </style>
-  
   <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  
-    
-    
   
   
     <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
@@ -42,8 +43,8 @@
       var yiliaConfig = {
           fancybox: true,
           animate: true,
-          isHome: true,
-          isPost: false,
+          isHome: false,
+          isPost: true,
           isArchive: false,
           isTag: false,
           isCategory: false,
@@ -236,9 +237,7 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap">
-  
-    <article id="post-Detect-cycle-in-directed-graph" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Detect-cycle-in-directed-graph" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
       <a href="/2016/03/12/Detect-cycle-in-directed-graph/" class="article-date">
@@ -254,12 +253,27 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/12/Detect-cycle-in-directed-graph/">Detect cycle in directed graph</a>
+    <h1 class="article-title" itemprop="name">
+      Detect cycle in directed graph
     </h1>
   
 
       </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Graph/">Graph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Topological-Sort/">Topological Sort</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
       
     
     <div class="article-entry" itemprop="articleBody">
@@ -287,166 +301,164 @@
       
     </div>
     
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Graph/">Graph</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Topological-Sort/">Topological Sort</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
   </div>
   
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-Detect-cycle-in-undirected-graph" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/11/Detect-cycle-in-undirected-graph/" class="article-date">
-      <time datetime="2016-03-12T06:16:00.000Z" itemprop="datePublished">03-11-2016</time>
-</a>
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/03/12/Detect-cycle-in-directed-graph/">Detect cycle in directed graph</a></p>
+        <p><span>Author:</span><a href="/" title="Go to Darren Cheng's blog">Darren Cheng</a></p>
+        <p><span>Publish Date:</span>03/12/2016 - 23:26</p>
+        <p><span>Update Date:</span>03/13/2016 - 00:19</p>
+        <p>
+            <span>Original Like:</span><a class="post-url" href="/2016/03/12/Detect-cycle-in-directed-graph/" title="Detect cycle in directed graph">http://darrencheng0817.github.io/2016/03/12/Detect-cycle-in-directed-graph/</a>
+            <span class="copy-path" data-clipboard-text="page: http://darrencheng0817.github.io/2016/03/12/Detect-cycle-in-directed-graph/　　author: Darren Cheng" title="copy the link"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by/4.0/" title=" Creative Commons Attribution 4.0 International License" target = "_blank">" Creative Commons Attribution 4.0 International License"</a><br>Please remain the original link and author if reprinted.
+        </p>
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
+
+
+
+    <nav id="article-nav">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/11/Detect-cycle-in-undirected-graph/">Detect cycle in undirected graph</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <hr>
-<h1 id="BFS-or-DFS"><a href="#BFS-or-DFS" class="headerlink" title="BFS or DFS"></a>BFS or DFS</h1><p>It is very easy to detect cycle in a undirected graph, simple BFS or DFS should work. Use a set to cache the nodes that have been visited. Then during the traversal, if current visiting node is alreadly in the set, there must be a cycle in the graph.</p>
-<h2 id="Python-code"><a href="#Python-code" class="headerlink" title="Python code:"></a>Python code:</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">circle_dectector</span><span class="params">(edges,start_point)</span>:</span></span><br><span class="line">    graph=build_graph(edges)</span><br><span class="line">    queue=[start_point]</span><br><span class="line">    visited=set()</span><br><span class="line">    visited.add(queue[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        from_point=queue.pop(<span class="number">0</span>)<span class="comment">#BFS</span></span><br><span class="line">        <span class="comment"># from_point=queue.pop(0) #DFS</span></span><br><span class="line">        <span class="keyword">for</span> to_point <span class="keyword">in</span> graph[from_point]:</span><br><span class="line">            <span class="keyword">if</span> to_point <span class="keyword">in</span> visited:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                queue.append(to_point)</span><br><span class="line">                visited.add(to_point)</span><br><span class="line">            graph[to_point].remove(from_point)</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">build_graph</span><span class="params">(edges)</span>:</span></span><br><span class="line">    graph=&#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> from_point,to_point <span class="keyword">in</span> edges:</span><br><span class="line">        <span class="keyword">if</span> from_point <span class="keyword">not</span> <span class="keyword">in</span> graph:</span><br><span class="line">            graph[from_point]=set()</span><br><span class="line">        <span class="keyword">if</span> to_point <span class="keyword">not</span> <span class="keyword">in</span> graph:</span><br><span class="line">            graph[to_point]=set()</span><br><span class="line">        graph[from_point].add(to_point)</span><br><span class="line">        graph[to_point].add(from_point)</span><br><span class="line">    <span class="keyword">return</span> graph</span><br><span class="line">        </span><br><span class="line">edges=[[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">2</span>,<span class="number">3</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">4</span>,<span class="number">1</span>]]</span><br><span class="line">print(circle_dectector(edges),<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<p>I use adjcent list to store the graph. The time complexity is O(V+E) time.</p>
-<p>The above code works for connected graph. For a disconnected graph, you could call the function for every point as the start point. Or you could put one point in each component in the queue initially.</p>
-<h1 id="Union-Find"><a href="#Union-Find" class="headerlink" title="Union-Find"></a>Union-Find</h1><p>The content will come soon.</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BFS/">BFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DFS/">DFS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Graph/">Graph</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-First-post" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/11/First-post/" class="article-date">
-      <time datetime="2016-03-12T00:57:00.000Z" itemprop="datePublished">03-11-2016</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
         
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/11/First-post/">First post</a>
-    </h1>
-  
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/03/11/Detect-cycle-in-undirected-graph/">
+                    Detect cycle in undirected graph
+                </a>
+            </div>
+        
+    </nav>
 
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-          
-        <p>Welcome to Darren’s blog! </p>
-<p>This static website is built by <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>, which is a node.js framework. The website is hosted both on github pages and coding.net(For chinese visitors). So for visitors in China, please go to the <a href="http://darrencheng.coding.me/" target="_blank" rel="external">mirror site</a> which is faster.</p>
-<p>I will write some technique posts or some moments about my life.</p>
-<p>Fight on!</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-    <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/other/">other</a>
-    </div>
-
-
-      
-    <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Other/">Other</a></li></ul>
-    </div>
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
   
 </article>
 
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Problem"><span class="toc-number">1.</span> <span class="toc-text">Problem</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Modified-DFS"><span class="toc-number">2.</span> <span class="toc-text">Modified DFS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-code"><span class="toc-number">2.1.</span> <span class="toc-text">Python code:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Topological-Sort"><span class="toc-number">3.</span> <span class="toc-text">Topological Sort</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Python-code-1"><span class="toc-number">3.1.</span> <span class="toc-text">Python code</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="Hide"  title="Show or Hide Contents">
+<script>
+    var valueHide = "Hide";
+    var valueShow = "Contents";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
 
 
 
 
+    <div class="share">
+    <div class="bdsharebuttonbox">
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享给 QQ 好友"></a>
+    <a href="#" class="bds_copy" data-cmd="copy" title="复制网址"></a>
+    <a href="#" class="bds_mail" data-cmd="mail" title="通过邮件分享"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="生成文章二维码"></a>
+    </div>
+    <script>
+        window._bd_share_config={
+            "common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+    </script>
+</div>
 
 
 
-  
-  
+    
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'darrenlifeblog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/03/11/Detect-cycle-in-undirected-graph/" title="下一篇: Detect cycle in undirected graph">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/12/Detect-cycle-in-directed-graph/">Detect cycle in directed graph</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/Detect-cycle-in-undirected-graph/">Detect cycle in undirected graph</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/First-post/">First post</a></li></ul>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
 </div>
       <footer id="footer">
     <div class="outer">
