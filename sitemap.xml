@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://darrencheng0817.github.io/about/index.html</loc>
+    
+    <lastmod>2016-03-14T22:46:51.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://darrencheng0817.github.io/static/share.js</loc>
     
     <lastmod>2016-03-14T21:46:02.000Z</lastmod>
@@ -23,6 +30,27 @@
   </url>
   
   <url>
+    <loc>http://darrencheng0817.github.io/static/api/js/share/api_base.js</loc>
+    
+    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://darrencheng0817.github.io/static/api/js/trans/trans_weixin.js</loc>
+    
+    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://darrencheng0817.github.io/static/api/js/base/tangram.js</loc>
+    
+    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://darrencheng0817.github.io/static/api/js/component/qrcode.js</loc>
     
     <lastmod>2016-03-14T21:22:46.000Z</lastmod>
@@ -37,28 +65,7 @@
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/view/share_view.js</loc>
-    
-    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/trans/trans_weixin.js</loc>
-    
-    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/component/pop_popup.js</loc>
-    
-    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/base/tangram.js</loc>
+    <loc>http://darrencheng0817.github.io/static/api/css/weixin_popup.css</loc>
     
     <lastmod>2016-03-14T21:22:46.000Z</lastmod>
     
@@ -72,13 +79,6 @@
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/static/api/css/weixin_popup.css</loc>
-    
-    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://darrencheng0817.github.io/static/api/css/share_style0_24.css</loc>
     
     <lastmod>2016-03-14T21:22:46.000Z</lastmod>
@@ -86,7 +86,7 @@
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/share/api_base.js</loc>
+    <loc>http://darrencheng0817.github.io/static/api/js/view/share_view.js</loc>
     
     <lastmod>2016-03-14T21:22:46.000Z</lastmod>
     
@@ -121,9 +121,9 @@
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/about/index.html</loc>
+    <loc>http://darrencheng0817.github.io/static/api/js/component/pop_popup.js</loc>
     
-    <lastmod>2016-03-14T04:08:46.000Z</lastmod>
+    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
     
   </url>
   
