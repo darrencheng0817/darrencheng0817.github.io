@@ -14,7 +14,7 @@ define([], function(){
             init: function(){
                 
             }
-        }
+        };
     })();
 
     var slide = function(idx){
@@ -33,7 +33,7 @@ define([], function(){
         $wrap[0].style.cssText = transform.join('');
         $(".icon-wrap").addClass("hide");
         $(".icon-wrap").eq(idx).removeClass("hide");
-    }
+    };
 
     var resetTags = function(){
         var tags = $(".tagcloud a");
@@ -41,9 +41,9 @@ define([], function(){
         for(var i = 0; i < tags.length; i++){
             var num = parseInt(4*Math.random()) + 1;
             tags.eq(i).addClass("color" + num);
-        };
+        }
         $(".article-category a:nth-child(-n+2)").attr("class", "color5");
-    }
+    };
 
     var bind = function(){
         var switchBtn = $("#myonoffswitch");
@@ -95,7 +95,7 @@ define([], function(){
             slide(idx);
             Tips.hide();
         });
-    }
+    };
 
     
 
@@ -105,7 +105,7 @@ define([], function(){
             bind();
             Tips.init();
         }
-    }
+    };
 });
 
 $(function() {
@@ -118,37 +118,37 @@ $(function() {
             delay: 250,
             duration: 55,
         }
-    })
+    });
     $("#scroll").tooltip({
         show: {
             effect: 'clip',
             delay: 600,
             duration: 50,
         }
-    })
+    });
     $("#tocButton, #comments").tooltip({
         show: {
             delay: 1200,
         }
-    })
-    $(".ds-replybox form").off("tooltip")
+    });
+    $(".ds-replybox form").off("tooltip");
     $("#post-nav-button").tooltip({
         show: {
             effect: 'clip',
             delay: 280,
             duration: 65,
         }
-    })
+    });
     $("#post-nav-button > a:nth-child(2)").tooltip({
         show: {
             delay: 1500,
         }
-    })
+    });
     $(".social").tooltip({
         show: {
             effect: 'scale',
             delay: 350,
             duration: 70,
         }
-    })
+    });
 });

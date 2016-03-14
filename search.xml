@@ -55,18 +55,6 @@
   
     
     <entry>
-      <title><![CDATA[Search]]></title>
-      <url>http://darrencheng0817.github.io/Search/index.html</url>
-      <content type="html"><![CDATA[<h2 id="Search-what-you-want"><a href="#Search-what-you-want" class="headerlink" title="Search what you want"></a>Search what you want</h2><p><div style="text-align: center"><br>    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search articles here!" class="search-input"><br></div></p>
-<p><div id="local-search-result"></div></p>
-<script src="/js/search.js"></script> 
-<script type="text/javascript">      
- var path = "/search.xml";
- searchFunc(path, 'local-search-input', 'local-search-result');
-</script>]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[404]]></title>
       <url>http://darrencheng0817.github.io//404.html</url>
       <content type="html"><![CDATA[<hr>
@@ -110,6 +98,18 @@ padding: 0;
     </entry>
     
     <entry>
+      <title><![CDATA[Search]]></title>
+      <url>http://darrencheng0817.github.io/Search/index.html</url>
+      <content type="html"><![CDATA[<h2 id="Search-what-you-want"><a href="#Search-what-you-want" class="headerlink" title="Search what you want"></a>Search what you want</h2><p><div style="text-align: center"><br>    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search articles here!" class="search-input"><br></div></p>
+<p><div id="local-search-result"></div></p>
+<script src="/js/search.js"></script> 
+<script type="text/javascript">      
+ var path = "/search.xml";
+ searchFunc(path, 'local-search-input', 'local-search-result');
+</script>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[About]]></title>
       <url>http://darrencheng0817.github.io/about/index.html</url>
       <content type="html"><![CDATA[<hr>
@@ -117,6 +117,7 @@ padding: 0;
 <a id="more"></a>
 <h1 id="History"><a href="#History" class="headerlink" title="History"></a>History</h1><h2 id="3-14-2016-Custom-404"><a href="#3-14-2016-Custom-404" class="headerlink" title="[3/14/2016] Custom 404"></a>[3/14/2016] Custom 404</h2><ol>
 <li>Added custom 404 page.</li>
+<li>Store images on <a href="https://www.flickr.com/" target="_blank" rel="external">flickr</a>, use plugin <a href="https://github.com/visioncan/hexo-tag-flickr" target="_blank" rel="external">hexo-tag-flickr</a> to access images.</li>
 </ol>
 <h2 id="3-13-2016-Top-amp-Search"><a href="#3-13-2016-Top-amp-Search" class="headerlink" title="[3/13/2016] Top &amp; Search"></a>[3/13/2016] Top &amp; Search</h2><ol>
 <li>Added top function, modified generator.js to sort posts first by top value, then date. Advised by <a href="http://www.netcan666.com/2015/11/22/%E8%A7%A3%E5%86%B3Hexo%E7%BD%AE%E9%A1%B6%E9%97%AE%E9%A2%98/" target="_blank" rel="external">Netcan</a>.</li>
@@ -135,14 +136,14 @@ padding: 0;
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://darrencheng0817.github.io/tags/index.html</url>
+      <title><![CDATA[Me]]></title>
+      <url>http://darrencheng0817.github.io/me/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[Me]]></title>
-      <url>http://darrencheng0817.github.io/me/index.html</url>
+      <title><![CDATA[tags]]></title>
+      <url>http://darrencheng0817.github.io/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
