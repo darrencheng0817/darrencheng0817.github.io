@@ -196,6 +196,40 @@ a {
 .hide {
   display: none;
 }
+.search-input {
+  display: inline-block;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  width: 80%;
+  height: 4%;
+  right: 10%;
+  left: 10%;
+  margin: 3px;
+  padding: 10px 20px;
+  border: 1px solid #b7b7b7;
+  -webkit-border-radius: 12px;
+  -webkit-border-radius: 12px;
+  border-radius: 12px;
+  font: normal 16px/normal "Times New Roman", Times, serif;
+  color: #008ec6;
+  -o-text-overflow: clip;
+  text-overflow: clip;
+  background: #fcfcfc;
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  -webkit-box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  box-shadow: 2px 2px 2px 0 rgba(0,0,0,0.2) inset;
+  text-shadow: 1px 1px 0 rgba(255,255,255,0.66);
+  -webkit-transition: all 200ms cubic-bezier(1, 0, 0, 1);
+  -moz-transition: all 200ms cubic-bezier(1, 0, 0, 1);
+  -o-transition: all 200ms cubic-bezier(1, 0, 0, 1);
+  -webkit-transition: all 200ms cubic-bezier(1, 0, 0, 1);
+  -moz-transition: all 200ms cubic-bezier(1, 0, 0, 1);
+  -ms-transition: all 200ms cubic-bezier(1, 0, 0, 1);
+  transition: all 200ms cubic-bezier(1, 0, 0, 1);
+}
 @media screen and (max-width: 1040px) {
   .inner {
     width: 100%;
