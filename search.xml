@@ -55,18 +55,6 @@
   
     
     <entry>
-      <title><![CDATA[Search]]></title>
-      <url>http://darrencheng0817.github.io/Search/index.html</url>
-      <content type="html"><![CDATA[<h2 id="Search-what-you-want"><a href="#Search-what-you-want" class="headerlink" title="Search what you want"></a>Search what you want</h2><p><div style="text-align: center"><br>    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search articles here!" class="search-input"><br></div></p>
-<p><div id="local-search-result"></div></p>
-<script src="/js/search.js"></script> 
-<script type="text/javascript">      
- var path = "/search.xml";
- searchFunc(path, 'local-search-input', 'local-search-result');
-</script>]]></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[404]]></title>
       <url>http://darrencheng0817.github.io//404.html</url>
       <content type="html"><![CDATA[<hr>
@@ -110,9 +98,15 @@ padding: 0;
     </entry>
     
     <entry>
-      <title><![CDATA[Me]]></title>
-      <url>http://darrencheng0817.github.io/me/index.html</url>
-      <content type="html"></content>
+      <title><![CDATA[Search]]></title>
+      <url>http://darrencheng0817.github.io/Search/index.html</url>
+      <content type="html"><![CDATA[<h2 id="Search-what-you-want"><a href="#Search-what-you-want" class="headerlink" title="Search what you want"></a>Search what you want</h2><p><div style="text-align: center"><br>    <input type="text" id="local-search-input" name="q" results="0" placeholder="Search articles here!" class="search-input"><br></div></p>
+<p><div id="local-search-result"></div></p>
+<script src="/js/search.js"></script> 
+<script type="text/javascript">      
+ var path = "/search.xml";
+ searchFunc(path, 'local-search-input', 'local-search-result');
+</script>]]></content>
     </entry>
     
     <entry>
@@ -125,7 +119,7 @@ padding: 0;
 <li>Added custom 404 page.</li>
 <li>Store images on <a href="https://www.flickr.com/" target="_blank" rel="external">flickr</a>, use plugin <a href="https://github.com/visioncan/hexo-tag-flickr" target="_blank" rel="external">hexo-tag-flickr</a> to access images.</li>
 <li>Start to use https.</li>
-<li>Change social sharing code which quote unsafe js scripts. Now the sharing js code use https connection. </li>
+<li>Change social sharing code which quotes unsafe js scripts. Now the sharing js code use https connection. </li>
 </ol>
 <h2 id="3-13-2016-Top-amp-Search"><a href="#3-13-2016-Top-amp-Search" class="headerlink" title="[3/13/2016] Top &amp; Search"></a>[3/13/2016] Top &amp; Search</h2><ol>
 <li>Added top function, modified generator.js to sort posts first by top value, then date. Advised by <a href="http://www.netcan666.com/2015/11/22/%E8%A7%A3%E5%86%B3Hexo%E7%BD%AE%E9%A1%B6%E9%97%AE%E9%A2%98/" target="_blank" rel="external">Netcan</a>.</li>
@@ -144,8 +138,8 @@ padding: 0;
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://darrencheng0817.github.io/tags/index.html</url>
+      <title><![CDATA[Me]]></title>
+      <url>http://darrencheng0817.github.io/me/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -156,9 +150,9 @@ padding: 0;
     </entry>
     
     <entry>
-      <title></title>
-      <url>http://darrencheng0817.github.io/static/api/css/weixin_popup.css</url>
-      <content type="html"><![CDATA[.bd_weixin_popup_bg{position:absolute;left:-400px;top:-400px;width:260px;height:320px;border:0;padding:0;margin:0;opacity:0;filter:alpha(opacity=0);z-index:11000}.bd_weixin_popup{position:absolute;left:-400px;top:-400px;padding:10px;width:240px;height:300px;background:#fff;border:solid 1px #d8d8d8;z-index:11001;font-size:12px}.bd_weixin_popup .bd_weixin_popup_head{font-size:12px;font-weight:bold;text-align:left;line-height:16px;height:16px;position:relative;color:#000}.bd_weixin_popup .bd_weixin_popup_head .bd_weixin_popup_close{width:16px;height:16px;position:absolute;right:0;top:0;color:#999;text-decoration:none;font-size:16px}.bd_weixin_popup .bd_weixin_popup_head .bd_weixin_popup_close:hover{text-decoration:none}.bd_weixin_popup .bd_weixin_popup_main{padding:15px 10px;min-height:150px;_height:150px}.bd_weixin_popup .bd_weixin_popup_foot{font-size:12px;text-align:left;line-height:22px;color:#666}]]></content>
+      <title><![CDATA[tags]]></title>
+      <url>http://darrencheng0817.github.io/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
@@ -175,6 +169,12 @@ padding: 0;
     
     <entry>
       <title></title>
+      <url>http://darrencheng0817.github.io/static/api/css/weixin_popup.css</url>
+      <content type="html"><![CDATA[.bd_weixin_popup_bg{position:absolute;left:-400px;top:-400px;width:260px;height:320px;border:0;padding:0;margin:0;opacity:0;filter:alpha(opacity=0);z-index:11000}.bd_weixin_popup{position:absolute;left:-400px;top:-400px;padding:10px;width:240px;height:300px;background:#fff;border:solid 1px #d8d8d8;z-index:11001;font-size:12px}.bd_weixin_popup .bd_weixin_popup_head{font-size:12px;font-weight:bold;text-align:left;line-height:16px;height:16px;position:relative;color:#000}.bd_weixin_popup .bd_weixin_popup_head .bd_weixin_popup_close{width:16px;height:16px;position:absolute;right:0;top:0;color:#999;text-decoration:none;font-size:16px}.bd_weixin_popup .bd_weixin_popup_head .bd_weixin_popup_close:hover{text-decoration:none}.bd_weixin_popup .bd_weixin_popup_main{padding:15px 10px;min-height:150px;_height:150px}.bd_weixin_popup .bd_weixin_popup_foot{font-size:12px;text-align:left;line-height:22px;color:#666}]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
       <url>http://darrencheng0817.github.io/static/api/js/trans/logger.js</url>
       <content type="html"></content>
     </entry>
@@ -187,20 +187,14 @@ padding: 0;
     
     <entry>
       <title></title>
-      <url>http://darrencheng0817.github.io/static/api/js/component/partners.js</url>
-      <content type="html"><![CDATA[window._bd_share_main.F.module("component/partners",function(e,t){t.partners={evernotecn:{name:"\u5370\u8c61\u7b14\u8bb0"},h163:{name:"\u7f51\u6613\u70ed"},mshare:{name:"\u4e00\u952e\u5206\u4eab"},qzone:{name:"QQ\u7a7a\u95f4"},tsina:{name:"\u65b0\u6d6a\u5fae\u535a"},renren:{name:"\u4eba\u4eba\u7f51"},tqq:{name:"\u817e\u8baf\u5fae\u535a"},bdxc:{name:"\u767e\u5ea6\u76f8\u518c"},kaixin001:{name:"\u5f00\u5fc3\u7f51"},tqf:{name:"\u817e\u8baf\u670b\u53cb"},tieba:{name:"\u767e\u5ea6\u8d34\u5427"},douban:{name:"\u8c46\u74e3\u7f51"},bdhome:{name:"\u767e\u5ea6\u65b0\u9996\u9875"},sqq:{name:"QQ\u597d\u53cb"},thx:{name:"\u548c\u8baf\u5fae\u535a"},bdysc:{name:"\u767e\u5ea6\u4e91\u6536\u85cf"},meilishuo:{name:"\u7f8e\u4e3d\u8bf4"},mogujie:{name:"\u8611\u83c7\u8857"},diandian:{name:"\u70b9\u70b9\u7f51"},huaban:{name:"\u82b1\u74e3"},duitang:{name:"\u5806\u7cd6"},hx:{name:"\u548c\u8baf"},fx:{name:"\u98de\u4fe1"},youdao:{name:"\u6709\u9053\u4e91\u7b14\u8bb0"},sdo:{name:"\u9ea6\u5e93\u8bb0\u4e8b"},qingbiji:{name:"\u8f7b\u7b14\u8bb0"},people:{name:"\u4eba\u6c11\u5fae\u535a"},xinhua:{name:"\u65b0\u534e\u5fae\u535a"},mail:{name:"\u90ae\u4ef6\u5206\u4eab"},isohu:{name:"\u6211\u7684\u641c\u72d0"},yaolan:{name:"\u6447\u7bee\u7a7a\u95f4"},wealink:{name:"\u82e5\u90bb\u7f51"},ty:{name:"\u5929\u6daf\u793e\u533a"},fbook:{name:"Facebook"},twi:{name:"Twitter"},linkedin:{name:"linkedin"},copy:{name:"\u590d\u5236\u7f51\u5740"},print:{name:"\u6253\u5370"},ibaidu:{name:"\u767e\u5ea6\u4e2d\u5fc3"},weixin:{name:"\u5fae\u4fe1"},iguba:{name:"\u80a1\u5427"}},t.partnerSort=["mshare","qzone","tsina","bdysc","weixin","renren","tqq","bdxc","kaixin001","tqf","tieba","douban","bdhome","sqq","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","fbook","twi","linkedin","h163","evernotecn","copy","print"]});]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
       <url>http://darrencheng0817.github.io/static/api/js/component/pop_base.js</url>
       <content type="html"><![CDATA[window._bd_share_main.F.module("component/pop_base",function(e,t,n){var r=e("base/tangram").T,i=e("conf/const"),s=e("base/class").Class;t.PopBase=s.create(function(t){function s(e){r(e).click(function(e){e=r.event(e||window.event);var t=o(e.target);t&&(e.preventDefault(),n.fire("clickact",{cmd:r(t).attr(n._actBtnSet.cmdAttr),element:t,event:e,buttonType:n._poptype}))}).mouseover(function(e){var t=o(e.target);n.fire("mouseenter",{element:t,event:e}),r(t).attr("data-cmd")=="more"&&n.fire("moreover",{element:t,event:e})})}function o(e){if(u(e))return e;if(n._actBtnSet.maxDomDepth>0){var t=n._actBtnSet.maxDomDepth,i=0,s=r(e).parent().get(0),o=n.entities;while(i]]></content>
     </entry>
     
     <entry>
       <title></title>
-      <url>http://darrencheng0817.github.io/static/api/js/component/pop_dialog.js</url>
-      <content type="html"><![CDATA[window._bd_share_main.F.module("component/pop_dialog",function(e,t){var n=e("base/tangram").T,r=e("base/class").Class,i=e("conf/const"),s=e("component/pop_base"),o={btn:""},u,a,f,l=r.create(function(){function t(t){t.keyCode==27&&e.hide()}function r(){var e=n.browser.ie==6?n(window).scrollTop():0,t=a.outerWidth(),r=a.outerHeight(),i=n(window).width(),s=n(window).height(),o=(s-r)/2+e,u=(i-t)/2;return{top:o>0?o:0,left:u>0?u:0}}function i(t,r){var i=n.extend({},e._partnerSort,r.bdDialogPartners),s=[];n.each(i,function(t,n){if(!/(iPhone | iPad | Android)/i.test(navigator.userAgent)||n!=="weixin")s[t]='<li><a href="#" onclick="return false;" class="popup_'+n+'" data-cmd="'+n+'">'+e._partners[n].name+"</a></li>"}),e._container.html(s.join(""))}var e=this;e._poptype=2,e._hide=function(){f&&f.hide(),a&&a.hide(),n("body").unbind("keydown",t)},e._show=function(s,o){i(e._container,o);var u=r();n.each([a,f],function(e,t){t.css({top:u.top,left:u.left}).show()}),n("body").bind("keydown",t),window._bd_share_main.F.use("trans/logger",function(e){e.dialog()})},e._init=function(){var t=['<iframe frameborder="0" class="bdshare_dialog_bg" style="display:none;"></iframe>'].join(""),r=['<div class="bdshare_dialog_box" style="display:none;">','<div class="bdshare_dialog_top">','<a class="bdshare_dialog_close" href="#" onclick="return false;" title="\u5173\u95ed"></a>\u5206\u4eab\u5230',"</div>",'<ul class="bdshare_dialog_list"></ul>','<div class="bdshare_dialog_bottom">','<a href="http://share.baidu.com/" target="_blank;">\u767e\u5ea6\u5206\u4eab</a>',"</div>","</div>"].join("");n("body").insertHTML("beforeEnd",t+r),e._container=n(".bdshare_dialog_list"),a=n(".bdshare_dialog_box"),f=n(".bdshare_dialog_bg"),n(".bdshare_dialog_close").click(e.hide)}},s.PopBase);t.Dialog=function(){return u||(u=new l,u.init()),u}()});]]></content>
+      <url>http://darrencheng0817.github.io/static/api/js/component/partners.js</url>
+      <content type="html"><![CDATA[window._bd_share_main.F.module("component/partners",function(e,t){t.partners={evernotecn:{name:"\u5370\u8c61\u7b14\u8bb0"},h163:{name:"\u7f51\u6613\u70ed"},mshare:{name:"\u4e00\u952e\u5206\u4eab"},qzone:{name:"QQ\u7a7a\u95f4"},tsina:{name:"\u65b0\u6d6a\u5fae\u535a"},renren:{name:"\u4eba\u4eba\u7f51"},tqq:{name:"\u817e\u8baf\u5fae\u535a"},bdxc:{name:"\u767e\u5ea6\u76f8\u518c"},kaixin001:{name:"\u5f00\u5fc3\u7f51"},tqf:{name:"\u817e\u8baf\u670b\u53cb"},tieba:{name:"\u767e\u5ea6\u8d34\u5427"},douban:{name:"\u8c46\u74e3\u7f51"},bdhome:{name:"\u767e\u5ea6\u65b0\u9996\u9875"},sqq:{name:"QQ\u597d\u53cb"},thx:{name:"\u548c\u8baf\u5fae\u535a"},bdysc:{name:"\u767e\u5ea6\u4e91\u6536\u85cf"},meilishuo:{name:"\u7f8e\u4e3d\u8bf4"},mogujie:{name:"\u8611\u83c7\u8857"},diandian:{name:"\u70b9\u70b9\u7f51"},huaban:{name:"\u82b1\u74e3"},duitang:{name:"\u5806\u7cd6"},hx:{name:"\u548c\u8baf"},fx:{name:"\u98de\u4fe1"},youdao:{name:"\u6709\u9053\u4e91\u7b14\u8bb0"},sdo:{name:"\u9ea6\u5e93\u8bb0\u4e8b"},qingbiji:{name:"\u8f7b\u7b14\u8bb0"},people:{name:"\u4eba\u6c11\u5fae\u535a"},xinhua:{name:"\u65b0\u534e\u5fae\u535a"},mail:{name:"\u90ae\u4ef6\u5206\u4eab"},isohu:{name:"\u6211\u7684\u641c\u72d0"},yaolan:{name:"\u6447\u7bee\u7a7a\u95f4"},wealink:{name:"\u82e5\u90bb\u7f51"},ty:{name:"\u5929\u6daf\u793e\u533a"},fbook:{name:"Facebook"},twi:{name:"Twitter"},linkedin:{name:"linkedin"},copy:{name:"\u590d\u5236\u7f51\u5740"},print:{name:"\u6253\u5370"},ibaidu:{name:"\u767e\u5ea6\u4e2d\u5fc3"},weixin:{name:"\u5fae\u4fe1"},iguba:{name:"\u80a1\u5427"}},t.partnerSort=["mshare","qzone","tsina","bdysc","weixin","renren","tqq","bdxc","kaixin001","tqf","tieba","douban","bdhome","sqq","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","fbook","twi","linkedin","h163","evernotecn","copy","print"]});]]></content>
     </entry>
     
     <entry>
@@ -211,8 +205,8 @@ padding: 0;
     
     <entry>
       <title></title>
-      <url>http://darrencheng0817.github.io/static/api/js/view/share_view.js</url>
-      <content type="html"><![CDATA[window._bd_share_main.F.module("view/share_view",function(e,t,n){var r=e("base/tangram").T,i=e("base/class").Class,s=e("conf/const"),o=e("view/view_base"),u={btn:"bdsharebuttonbox",count:"bds_count"};t.View=i.create(function(e){function o(){var o=e.tag||"";return r("."+u.btn).each(function(e,u){if(!o||r(u).attr(s.CONFIG_TAG_ATTR)==o)t._entities.push(u),r(u).removeClass(function(e,t){var n=t.match(/bdshare-button-style\d*-\d*/g);if(n)return n.join(" ")}),r(u).addClass("bdshare-button-style"+n+"-"+i)}),t._entities}function a(){if(e.bdCustomStyle){var t=document.createElement("link");t.href=e.bdCustomStyle,t.rel="styleSheet",t.type="text/css",document.getElementsByTagName("head")[0].appendChild(t)}else window._bd_share_main.F.use("share_style"+n+"_"+i+".css")}function f(){r("."+u.btn).each(function(e,t){r(t).children("a,span").each(function(e,t){var n=r(t).attr(s.CMD_ATTR);n&&window._bd_share_main.F.use("component/partners",function(e){var i=e.partners,s=i[n]?"\u5206\u4eab\u5230"+i[n].name:"";!r(t).attr("title")&&s&&r(t).attr("title",s)})})})}var t=this,n=e.bdStyle||0,i="|16|24|32|".indexOf("|"+e.bdSize+"|")>-1?e.bdSize:16;t._buttonType=0,t.render=function(e){o(),f()},t._init=function(){a(),r(t._entities).find("."+u.count).length>0&&t.fire("getsharecount")},t.setNumber=function(e,n){r(t._entities).find("."+u.count).html(n).attr("title","\u7d2f\u8ba1\u5206\u4eab"+e+"\u6b21")}},o.ViewBase)});]]></content>
+      <url>http://darrencheng0817.github.io/static/api/js/component/pop_dialog.js</url>
+      <content type="html"><![CDATA[window._bd_share_main.F.module("component/pop_dialog",function(e,t){var n=e("base/tangram").T,r=e("base/class").Class,i=e("conf/const"),s=e("component/pop_base"),o={btn:""},u,a,f,l=r.create(function(){function t(t){t.keyCode==27&&e.hide()}function r(){var e=n.browser.ie==6?n(window).scrollTop():0,t=a.outerWidth(),r=a.outerHeight(),i=n(window).width(),s=n(window).height(),o=(s-r)/2+e,u=(i-t)/2;return{top:o>0?o:0,left:u>0?u:0}}function i(t,r){var i=n.extend({},e._partnerSort,r.bdDialogPartners),s=[];n.each(i,function(t,n){if(!/(iPhone | iPad | Android)/i.test(navigator.userAgent)||n!=="weixin")s[t]='<li><a href="#" onclick="return false;" class="popup_'+n+'" data-cmd="'+n+'">'+e._partners[n].name+"</a></li>"}),e._container.html(s.join(""))}var e=this;e._poptype=2,e._hide=function(){f&&f.hide(),a&&a.hide(),n("body").unbind("keydown",t)},e._show=function(s,o){i(e._container,o);var u=r();n.each([a,f],function(e,t){t.css({top:u.top,left:u.left}).show()}),n("body").bind("keydown",t),window._bd_share_main.F.use("trans/logger",function(e){e.dialog()})},e._init=function(){var t=['<iframe frameborder="0" class="bdshare_dialog_bg" style="display:none;"></iframe>'].join(""),r=['<div class="bdshare_dialog_box" style="display:none;">','<div class="bdshare_dialog_top">','<a class="bdshare_dialog_close" href="#" onclick="return false;" title="\u5173\u95ed"></a>\u5206\u4eab\u5230',"</div>",'<ul class="bdshare_dialog_list"></ul>','<div class="bdshare_dialog_bottom">','<a href="http://share.baidu.com/" target="_blank;">\u767e\u5ea6\u5206\u4eab</a>',"</div>","</div>"].join("");n("body").insertHTML("beforeEnd",t+r),e._container=n(".bdshare_dialog_list"),a=n(".bdshare_dialog_box"),f=n(".bdshare_dialog_bg"),n(".bdshare_dialog_close").click(e.hide)}},s.PopBase);t.Dialog=function(){return u||(u=new l,u.init()),u}()});]]></content>
     </entry>
     
     <entry>
@@ -235,14 +229,20 @@ padding: 0;
     
     <entry>
       <title></title>
-      <url>http://darrencheng0817.github.io/static/api/js/view/view_base.js</url>
-      <content type="html"><![CDATA[window._bd_share_main.F.module("view/view_base",function(e,t,n){var r=e("base/tangram").T,i=e("conf/const"),s=e("base/class").Class;t.ViewBase=s.create(function(e){function s(e){r(e).click(function(i){if(r(e).attr("data-bd-bind")==n){var s=o(i.target);s&&(i.preventDefault(),t.fire("clickact",{cmd:r(s).attr(t._actBtnSet.cmdAttr),element:s,event:i,buttonType:t._poptype}))}}).mouseenter(function(i){if(r(e).attr("data-bd-bind")==n){var s=o(i.target);t.fire("mouseenter",{element:s,event:i})}}).mousemove(function(i){if(r(e).attr("data-bd-bind")==n){var s=o(i.target);r(s).hasClass("bds_more")&&t.fire("moreover",{element:s})}}),r(e).attr("data-bd-bind",n)}function o(e){if(u(e))return e;if(t._actBtnSet.maxDomDepth>0){var n=t._actBtnSet.maxDomDepth,i=0,s=r(e).parent().get(0),o=t.entities;while(i<n){if(u(s))return s;s="r(s).parent().get(0);if(r.array(o).contains(s)||s==document.body)break;i++}}return" null}function="" u(e){var="" n="t._actBtnSet;return" e&&e.tagname&&(n.classname||n.tagname)?(!n.classname||r(e).hasclass(n.classname))&&(!n.tagname||n.tagname.tolowercase().indexof("|"+e.tagname.tolowercase()+"|")="">-1)&&r(e).attr(n.cmdAttr):!1}var t=this,n=+(new Date);t._entities=[],t._buttonType=-1,t._actBtnSet={className:"",tagName:"|a|img|span",maxDomDepth:0,cmdAttr:i.CMD_ATTR},t.render=function(e){},t.init=function(){r(t._entities).each(function(e,t){s(t)}),t._init(),t._entities.length>0&&(_bd_share_main._LogPoolV2==_bd_share_main._LogPoolV2||[],_bd_share_main._LogPoolV2.push(e.type))},t._init=function(){},t.distory=function(){r(t._entities).removeAttr("data-bd-bind"),t._distory()},t._distory=function(){}})});</n){if(u(s))return>]]></content>
+      <url>http://darrencheng0817.github.io/static/api/js/view/share_view.js</url>
+      <content type="html"><![CDATA[window._bd_share_main.F.module("view/share_view",function(e,t,n){var r=e("base/tangram").T,i=e("base/class").Class,s=e("conf/const"),o=e("view/view_base"),u={btn:"bdsharebuttonbox",count:"bds_count"};t.View=i.create(function(e){function o(){var o=e.tag||"";return r("."+u.btn).each(function(e,u){if(!o||r(u).attr(s.CONFIG_TAG_ATTR)==o)t._entities.push(u),r(u).removeClass(function(e,t){var n=t.match(/bdshare-button-style\d*-\d*/g);if(n)return n.join(" ")}),r(u).addClass("bdshare-button-style"+n+"-"+i)}),t._entities}function a(){if(e.bdCustomStyle){var t=document.createElement("link");t.href=e.bdCustomStyle,t.rel="styleSheet",t.type="text/css",document.getElementsByTagName("head")[0].appendChild(t)}else window._bd_share_main.F.use("share_style"+n+"_"+i+".css")}function f(){r("."+u.btn).each(function(e,t){r(t).children("a,span").each(function(e,t){var n=r(t).attr(s.CMD_ATTR);n&&window._bd_share_main.F.use("component/partners",function(e){var i=e.partners,s=i[n]?"\u5206\u4eab\u5230"+i[n].name:"";!r(t).attr("title")&&s&&r(t).attr("title",s)})})})}var t=this,n=e.bdStyle||0,i="|16|24|32|".indexOf("|"+e.bdSize+"|")>-1?e.bdSize:16;t._buttonType=0,t.render=function(e){o(),f()},t._init=function(){a(),r(t._entities).find("."+u.count).length>0&&t.fire("getsharecount")},t.setNumber=function(e,n){r(t._entities).find("."+u.count).html(n).attr("title","\u7d2f\u8ba1\u5206\u4eab"+e+"\u6b21")}},o.ViewBase)});]]></content>
     </entry>
     
     <entry>
       <title></title>
       <url>http://darrencheng0817.github.io/static/api/js/share/share_api.js</url>
       <content type="html"><![CDATA[window._bd_share_main.F.module("share/share_api",function(e,t,n){var r=e("base/tangram").T,i=e("base/class").Class,s=e("component/comm_tools"),o=e("share/api_base");t.Api=i.create(function(e){function r(t){window._bd_share_main.F.use("trans/data",function(n){n.get({type:"share_count",url:e.bdUrl||s.getPageUrl(),callback:function(e,n){var r={count:e,display:n};t&&t(r)}})})}var t=this,n={count:0,clicked:!1};t._init=function(){var e=t.getView();e.render(),e.on("getsharecount",function(){r(function(t){n.count=t.count,e.setNumber(t.count,t.display)})}),e.init()},t._processAction=function(e){return{data:{type:"share"}}}},o.ApiBase)});]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
+      <url>http://darrencheng0817.github.io/static/api/js/view/view_base.js</url>
+      <content type="html"><![CDATA[window._bd_share_main.F.module("view/view_base",function(e,t,n){var r=e("base/tangram").T,i=e("conf/const"),s=e("base/class").Class;t.ViewBase=s.create(function(e){function s(e){r(e).click(function(i){if(r(e).attr("data-bd-bind")==n){var s=o(i.target);s&&(i.preventDefault(),t.fire("clickact",{cmd:r(s).attr(t._actBtnSet.cmdAttr),element:s,event:i,buttonType:t._poptype}))}}).mouseenter(function(i){if(r(e).attr("data-bd-bind")==n){var s=o(i.target);t.fire("mouseenter",{element:s,event:i})}}).mousemove(function(i){if(r(e).attr("data-bd-bind")==n){var s=o(i.target);r(s).hasClass("bds_more")&&t.fire("moreover",{element:s})}}),r(e).attr("data-bd-bind",n)}function o(e){if(u(e))return e;if(t._actBtnSet.maxDomDepth>0){var n=t._actBtnSet.maxDomDepth,i=0,s=r(e).parent().get(0),o=t.entities;while(i<n){if(u(s))return s;s="r(s).parent().get(0);if(r.array(o).contains(s)||s==document.body)break;i++}}return" null}function="" u(e){var="" n="t._actBtnSet;return" e&&e.tagname&&(n.classname||n.tagname)?(!n.classname||r(e).hasclass(n.classname))&&(!n.tagname||n.tagname.tolowercase().indexof("|"+e.tagname.tolowercase()+"|")="">-1)&&r(e).attr(n.cmdAttr):!1}var t=this,n=+(new Date);t._entities=[],t._buttonType=-1,t._actBtnSet={className:"",tagName:"|a|img|span",maxDomDepth:0,cmdAttr:i.CMD_ATTR},t.render=function(e){},t.init=function(){r(t._entities).each(function(e,t){s(t)}),t._init(),t._entities.length>0&&(_bd_share_main._LogPoolV2==_bd_share_main._LogPoolV2||[],_bd_share_main._LogPoolV2.push(e.type))},t._init=function(){},t.distory=function(){r(t._entities).removeAttr("data-bd-bind"),t._distory()},t._distory=function(){}})});</n){if(u(s))return>]]></content>
     </entry>
     
     <entry>
