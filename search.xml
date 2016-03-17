@@ -4,6 +4,144 @@
   
     
     <entry>
+      <title><![CDATA[Basic usage of jQuery]]></title>
+      <url>http://darrencheng0817.github.io/2016/03/16/basic-usage-of-jquery/</url>
+      <content type="html"><![CDATA[<hr>
+<blockquote>
+<p>jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>
+</blockquote>
+<p>This post will discuss some basic usage of jQuery. It should be useful for beginners and myself to consult.</p>
+<p>Go <a href="http://api.jquery.com/" target="_blank" rel="external">here</a> for the full API document.</p>
+<p>All jQuery functions start with a $, usually referred to as a dollar sign operator, or simply as bling.<br><a id="more"></a></p>
+<h2 id="Document-ready-function"><a href="#Document-ready-function" class="headerlink" title="Document ready function"></a><a href="http://api.jquery.com/ready/" target="_blank" rel="external">Document ready function</a></h2><p>.ready()function is a function to execute after the DOM is ready.</p>
+<p>This is important because without your document ready function, your code may run before your HTML is rendered, which would cause bugs.</p>
+<h2 id="Selector"><a href="#Selector" class="headerlink" title="Selector"></a><a href="http://api.jquery.com/category/selectors/" target="_blank" rel="external">Selector</a></h2><p>jQuery often selects an HTML element with a selector, then does something to that element.</p>
+<p>Following are most common usage. <a href="http://www.w3schools.com/jquery/jquery_ref_selectors.asp" target="_blank" rel="external">Full list</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Selector</th>
+<th style="text-align:center">Example</th>
+<th style="text-align:right">Selects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>＊</td>
+<td style="text-align:center">$(“*”)</td>
+<td style="text-align:right">All elements</td>
+</tr>
+<tr>
+<td>#id</td>
+<td style="text-align:center">$(“#lastname”)</td>
+<td style="text-align:right">The element with id=”lastname”</td>
+</tr>
+<tr>
+<td>.class</td>
+<td style="text-align:center">$(“.intro”)</td>
+<td style="text-align:right">All elements with the class “intro” or “demo”</td>
+</tr>
+<tr>
+<td>element</td>
+<td style="text-align:center">$(“p”)</td>
+<td style="text-align:right">All &lt; p &gt; elements</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Manipulation"><a href="#Manipulation" class="headerlink" title="Manipulation"></a><a href="http://api.jquery.com/category/manipulation/" target="_blank" rel="external">Manipulation</a></h2><h3 id="Class-Attribute"><a href="#Class-Attribute" class="headerlink" title="Class Attribute"></a><a href="http://api.jquery.com/category/attributes/" target="_blank" rel="external">Class Attribute</a></h3><p>These methods inspect and manipulate the CSS classes assigned to elements.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align:center">Explain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.addClass()</td>
+<td style="text-align:center">Adds the specified class(es) to each element in the set of matched elements.</td>
+</tr>
+<tr>
+<td>.hasClass()</td>
+<td style="text-align:center">Determine whether any of the matched elements are assigned the given class.</td>
+</tr>
+<tr>
+<td>.removeClass()</td>
+<td style="text-align:center">Remove a single class, multiple classes, or all classes from each element in the set of matched elements.</td>
+</tr>
+<tr>
+<td>.toggleClass()</td>
+<td style="text-align:center">Add or remove one or more classes from each element in the set of matched elements, depending on either the class’s presence or the value of the state argument.</td>
+</tr>
+<tr>
+<td>.attr()</td>
+<td style="text-align:center">Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</td>
+</tr>
+<tr>
+<td>.prop()</td>
+<td style="text-align:center">Get the value of a property for the first element in the set of matched elements or set one or more properties for every matched element.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Copying"><a href="#Copying" class="headerlink" title="Copying"></a>Copying</h3><p>.clone() method allows us to create a deep copy of the set of matched elements.</p>
+<h3 id="DOM-Insertion"><a href="#DOM-Insertion" class="headerlink" title="DOM Insertion"></a>DOM Insertion</h3><p>These methods allow us to insert new content inside an existing element.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align:center">Explain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.append()</td>
+<td style="text-align:center">Insert content, specified by the parameter, to the end of each element in the set of matched elements.</td>
+</tr>
+<tr>
+<td>.appendTo()</td>
+<td style="text-align:center">Insert every element in the set of matched elements to the end of the target.</td>
+</tr>
+<tr>
+<td>.prepend()</td>
+<td style="text-align:center">Insert content, specified by the parameter, to the beginning of each element in the set of matched elements.</td>
+</tr>
+<tr>
+<td>.prependTo()</td>
+<td style="text-align:center">Insert every element in the set of matched elements to the beginning of the target.</td>
+</tr>
+</tbody>
+</table>
+<p>These methods allow us to insert new content outside an existing element.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th style="text-align:center">Explain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.after()</td>
+<td style="text-align:center">Insert content, specified by the parameter, after each element in the set of matched elements.</td>
+</tr>
+<tr>
+<td>.before()</td>
+<td style="text-align:center">Insert content, specified by the parameter, before each element in the set of matched elements.</td>
+</tr>
+<tr>
+<td>.insertAfter()</td>
+<td style="text-align:center">Insert every element in the set of matched elements after the target.</td>
+</tr>
+<tr>
+<td>.insertBefore()</td>
+<td style="text-align:center">Insert every element in the set of matched elements before the target.</td>
+</tr>
+</tbody>
+</table>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Detect cycle in directed graph]]></title>
       <url>http://darrencheng0817.github.io/2016/03/12/Detect-cycle-in-directed-graph/</url>
       <content type="html"><![CDATA[<hr>
@@ -140,6 +278,14 @@ padding: 0;
     <entry>
       <title><![CDATA[Me]]></title>
       <url>http://darrencheng0817.github.io/me/index.html</url>
+      <content type="html"><![CDATA[<hr>
+<p>Current master student in University of California. Full-stack developer.</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>http://darrencheng0817.github.io/tags/index.html</url>
       <content type="html"></content>
     </entry>
     
@@ -150,9 +296,9 @@ padding: 0;
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://darrencheng0817.github.io/tags/index.html</url>
-      <content type="html"></content>
+      <title></title>
+      <url>http://darrencheng0817.github.io/static/api/css/weixin_popup.css</url>
+      <content type="html"><![CDATA[.bd_weixin_popup_bg{position:absolute;left:-400px;top:-400px;width:260px;height:320px;border:0;padding:0;margin:0;opacity:0;filter:alpha(opacity=0);z-index:11000}.bd_weixin_popup{position:absolute;left:-400px;top:-400px;padding:10px;width:240px;height:300px;background:#fff;border:solid 1px #d8d8d8;z-index:11001;font-size:12px}.bd_weixin_popup .bd_weixin_popup_head{font-size:12px;font-weight:bold;text-align:left;line-height:16px;height:16px;position:relative;color:#000}.bd_weixin_popup .bd_weixin_popup_head .bd_weixin_popup_close{width:16px;height:16px;position:absolute;right:0;top:0;color:#999;text-decoration:none;font-size:16px}.bd_weixin_popup .bd_weixin_popup_head .bd_weixin_popup_close:hover{text-decoration:none}.bd_weixin_popup .bd_weixin_popup_main{padding:15px 10px;min-height:150px;_height:150px}.bd_weixin_popup .bd_weixin_popup_foot{font-size:12px;text-align:left;line-height:22px;color:#666}]]></content>
     </entry>
     
     <entry>
@@ -169,14 +315,14 @@ padding: 0;
     
     <entry>
       <title></title>
-      <url>http://darrencheng0817.github.io/static/api/css/weixin_popup.css</url>
-      <content type="html"><![CDATA[.bd_weixin_popup_bg{position:absolute;left:-400px;top:-400px;width:260px;height:320px;border:0;padding:0;margin:0;opacity:0;filter:alpha(opacity=0);z-index:11000}.bd_weixin_popup{position:absolute;left:-400px;top:-400px;padding:10px;width:240px;height:300px;background:#fff;border:solid 1px #d8d8d8;z-index:11001;font-size:12px}.bd_weixin_popup .bd_weixin_popup_head{font-size:12px;font-weight:bold;text-align:left;line-height:16px;height:16px;position:relative;color:#000}.bd_weixin_popup .bd_weixin_popup_head .bd_weixin_popup_close{width:16px;height:16px;position:absolute;right:0;top:0;color:#999;text-decoration:none;font-size:16px}.bd_weixin_popup .bd_weixin_popup_head .bd_weixin_popup_close:hover{text-decoration:none}.bd_weixin_popup .bd_weixin_popup_main{padding:15px 10px;min-height:150px;_height:150px}.bd_weixin_popup .bd_weixin_popup_foot{font-size:12px;text-align:left;line-height:22px;color:#666}]]></content>
+      <url>http://darrencheng0817.github.io/static/api/js/trans/logger.js</url>
+      <content type="html"></content>
     </entry>
     
     <entry>
       <title></title>
-      <url>http://darrencheng0817.github.io/static/api/js/trans/logger.js</url>
-      <content type="html"></content>
+      <url>http://darrencheng0817.github.io/static/api/js/component/partners.js</url>
+      <content type="html"><![CDATA[window._bd_share_main.F.module("component/partners",function(e,t){t.partners={evernotecn:{name:"\u5370\u8c61\u7b14\u8bb0"},h163:{name:"\u7f51\u6613\u70ed"},mshare:{name:"\u4e00\u952e\u5206\u4eab"},qzone:{name:"QQ\u7a7a\u95f4"},tsina:{name:"\u65b0\u6d6a\u5fae\u535a"},renren:{name:"\u4eba\u4eba\u7f51"},tqq:{name:"\u817e\u8baf\u5fae\u535a"},bdxc:{name:"\u767e\u5ea6\u76f8\u518c"},kaixin001:{name:"\u5f00\u5fc3\u7f51"},tqf:{name:"\u817e\u8baf\u670b\u53cb"},tieba:{name:"\u767e\u5ea6\u8d34\u5427"},douban:{name:"\u8c46\u74e3\u7f51"},bdhome:{name:"\u767e\u5ea6\u65b0\u9996\u9875"},sqq:{name:"QQ\u597d\u53cb"},thx:{name:"\u548c\u8baf\u5fae\u535a"},bdysc:{name:"\u767e\u5ea6\u4e91\u6536\u85cf"},meilishuo:{name:"\u7f8e\u4e3d\u8bf4"},mogujie:{name:"\u8611\u83c7\u8857"},diandian:{name:"\u70b9\u70b9\u7f51"},huaban:{name:"\u82b1\u74e3"},duitang:{name:"\u5806\u7cd6"},hx:{name:"\u548c\u8baf"},fx:{name:"\u98de\u4fe1"},youdao:{name:"\u6709\u9053\u4e91\u7b14\u8bb0"},sdo:{name:"\u9ea6\u5e93\u8bb0\u4e8b"},qingbiji:{name:"\u8f7b\u7b14\u8bb0"},people:{name:"\u4eba\u6c11\u5fae\u535a"},xinhua:{name:"\u65b0\u534e\u5fae\u535a"},mail:{name:"\u90ae\u4ef6\u5206\u4eab"},isohu:{name:"\u6211\u7684\u641c\u72d0"},yaolan:{name:"\u6447\u7bee\u7a7a\u95f4"},wealink:{name:"\u82e5\u90bb\u7f51"},ty:{name:"\u5929\u6daf\u793e\u533a"},fbook:{name:"Facebook"},twi:{name:"Twitter"},linkedin:{name:"linkedin"},copy:{name:"\u590d\u5236\u7f51\u5740"},print:{name:"\u6253\u5370"},ibaidu:{name:"\u767e\u5ea6\u4e2d\u5fc3"},weixin:{name:"\u5fae\u4fe1"},iguba:{name:"\u80a1\u5427"}},t.partnerSort=["mshare","qzone","tsina","bdysc","weixin","renren","tqq","bdxc","kaixin001","tqf","tieba","douban","bdhome","sqq","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","fbook","twi","linkedin","h163","evernotecn","copy","print"]});]]></content>
     </entry>
     
     <entry>
@@ -193,8 +339,8 @@ padding: 0;
     
     <entry>
       <title></title>
-      <url>http://darrencheng0817.github.io/static/api/js/component/partners.js</url>
-      <content type="html"><![CDATA[window._bd_share_main.F.module("component/partners",function(e,t){t.partners={evernotecn:{name:"\u5370\u8c61\u7b14\u8bb0"},h163:{name:"\u7f51\u6613\u70ed"},mshare:{name:"\u4e00\u952e\u5206\u4eab"},qzone:{name:"QQ\u7a7a\u95f4"},tsina:{name:"\u65b0\u6d6a\u5fae\u535a"},renren:{name:"\u4eba\u4eba\u7f51"},tqq:{name:"\u817e\u8baf\u5fae\u535a"},bdxc:{name:"\u767e\u5ea6\u76f8\u518c"},kaixin001:{name:"\u5f00\u5fc3\u7f51"},tqf:{name:"\u817e\u8baf\u670b\u53cb"},tieba:{name:"\u767e\u5ea6\u8d34\u5427"},douban:{name:"\u8c46\u74e3\u7f51"},bdhome:{name:"\u767e\u5ea6\u65b0\u9996\u9875"},sqq:{name:"QQ\u597d\u53cb"},thx:{name:"\u548c\u8baf\u5fae\u535a"},bdysc:{name:"\u767e\u5ea6\u4e91\u6536\u85cf"},meilishuo:{name:"\u7f8e\u4e3d\u8bf4"},mogujie:{name:"\u8611\u83c7\u8857"},diandian:{name:"\u70b9\u70b9\u7f51"},huaban:{name:"\u82b1\u74e3"},duitang:{name:"\u5806\u7cd6"},hx:{name:"\u548c\u8baf"},fx:{name:"\u98de\u4fe1"},youdao:{name:"\u6709\u9053\u4e91\u7b14\u8bb0"},sdo:{name:"\u9ea6\u5e93\u8bb0\u4e8b"},qingbiji:{name:"\u8f7b\u7b14\u8bb0"},people:{name:"\u4eba\u6c11\u5fae\u535a"},xinhua:{name:"\u65b0\u534e\u5fae\u535a"},mail:{name:"\u90ae\u4ef6\u5206\u4eab"},isohu:{name:"\u6211\u7684\u641c\u72d0"},yaolan:{name:"\u6447\u7bee\u7a7a\u95f4"},wealink:{name:"\u82e5\u90bb\u7f51"},ty:{name:"\u5929\u6daf\u793e\u533a"},fbook:{name:"Facebook"},twi:{name:"Twitter"},linkedin:{name:"linkedin"},copy:{name:"\u590d\u5236\u7f51\u5740"},print:{name:"\u6253\u5370"},ibaidu:{name:"\u767e\u5ea6\u4e2d\u5fc3"},weixin:{name:"\u5fae\u4fe1"},iguba:{name:"\u80a1\u5427"}},t.partnerSort=["mshare","qzone","tsina","bdysc","weixin","renren","tqq","bdxc","kaixin001","tqf","tieba","douban","bdhome","sqq","thx","ibaidu","meilishuo","mogujie","diandian","huaban","duitang","hx","fx","youdao","sdo","qingbiji","people","xinhua","mail","isohu","yaolan","wealink","ty","iguba","fbook","twi","linkedin","h163","evernotecn","copy","print"]});]]></content>
+      <url>http://darrencheng0817.github.io/static/api/js/component/pop_dialog.js</url>
+      <content type="html"><![CDATA[window._bd_share_main.F.module("component/pop_dialog",function(e,t){var n=e("base/tangram").T,r=e("base/class").Class,i=e("conf/const"),s=e("component/pop_base"),o={btn:""},u,a,f,l=r.create(function(){function t(t){t.keyCode==27&&e.hide()}function r(){var e=n.browser.ie==6?n(window).scrollTop():0,t=a.outerWidth(),r=a.outerHeight(),i=n(window).width(),s=n(window).height(),o=(s-r)/2+e,u=(i-t)/2;return{top:o>0?o:0,left:u>0?u:0}}function i(t,r){var i=n.extend({},e._partnerSort,r.bdDialogPartners),s=[];n.each(i,function(t,n){if(!/(iPhone | iPad | Android)/i.test(navigator.userAgent)||n!=="weixin")s[t]='<li><a href="#" onclick="return false;" class="popup_'+n+'" data-cmd="'+n+'">'+e._partners[n].name+"</a></li>"}),e._container.html(s.join(""))}var e=this;e._poptype=2,e._hide=function(){f&&f.hide(),a&&a.hide(),n("body").unbind("keydown",t)},e._show=function(s,o){i(e._container,o);var u=r();n.each([a,f],function(e,t){t.css({top:u.top,left:u.left}).show()}),n("body").bind("keydown",t),window._bd_share_main.F.use("trans/logger",function(e){e.dialog()})},e._init=function(){var t=['<iframe frameborder="0" class="bdshare_dialog_bg" style="display:none;"></iframe>'].join(""),r=['<div class="bdshare_dialog_box" style="display:none;">','<div class="bdshare_dialog_top">','<a class="bdshare_dialog_close" href="#" onclick="return false;" title="\u5173\u95ed"></a>\u5206\u4eab\u5230',"</div>",'<ul class="bdshare_dialog_list"></ul>','<div class="bdshare_dialog_bottom">','<a href="http://share.baidu.com/" target="_blank;">\u767e\u5ea6\u5206\u4eab</a>',"</div>","</div>"].join("");n("body").insertHTML("beforeEnd",t+r),e._container=n(".bdshare_dialog_list"),a=n(".bdshare_dialog_box"),f=n(".bdshare_dialog_bg"),n(".bdshare_dialog_close").click(e.hide)}},s.PopBase);t.Dialog=function(){return u||(u=new l,u.init()),u}()});]]></content>
     </entry>
     
     <entry>
@@ -205,20 +351,8 @@ padding: 0;
     
     <entry>
       <title></title>
-      <url>http://darrencheng0817.github.io/static/api/js/component/pop_dialog.js</url>
-      <content type="html"><![CDATA[window._bd_share_main.F.module("component/pop_dialog",function(e,t){var n=e("base/tangram").T,r=e("base/class").Class,i=e("conf/const"),s=e("component/pop_base"),o={btn:""},u,a,f,l=r.create(function(){function t(t){t.keyCode==27&&e.hide()}function r(){var e=n.browser.ie==6?n(window).scrollTop():0,t=a.outerWidth(),r=a.outerHeight(),i=n(window).width(),s=n(window).height(),o=(s-r)/2+e,u=(i-t)/2;return{top:o>0?o:0,left:u>0?u:0}}function i(t,r){var i=n.extend({},e._partnerSort,r.bdDialogPartners),s=[];n.each(i,function(t,n){if(!/(iPhone | iPad | Android)/i.test(navigator.userAgent)||n!=="weixin")s[t]='<li><a href="#" onclick="return false;" class="popup_'+n+'" data-cmd="'+n+'">'+e._partners[n].name+"</a></li>"}),e._container.html(s.join(""))}var e=this;e._poptype=2,e._hide=function(){f&&f.hide(),a&&a.hide(),n("body").unbind("keydown",t)},e._show=function(s,o){i(e._container,o);var u=r();n.each([a,f],function(e,t){t.css({top:u.top,left:u.left}).show()}),n("body").bind("keydown",t),window._bd_share_main.F.use("trans/logger",function(e){e.dialog()})},e._init=function(){var t=['<iframe frameborder="0" class="bdshare_dialog_bg" style="display:none;"></iframe>'].join(""),r=['<div class="bdshare_dialog_box" style="display:none;">','<div class="bdshare_dialog_top">','<a class="bdshare_dialog_close" href="#" onclick="return false;" title="\u5173\u95ed"></a>\u5206\u4eab\u5230',"</div>",'<ul class="bdshare_dialog_list"></ul>','<div class="bdshare_dialog_bottom">','<a href="http://share.baidu.com/" target="_blank;">\u767e\u5ea6\u5206\u4eab</a>',"</div>","</div>"].join("");n("body").insertHTML("beforeEnd",t+r),e._container=n(".bdshare_dialog_list"),a=n(".bdshare_dialog_box"),f=n(".bdshare_dialog_bg"),n(".bdshare_dialog_close").click(e.hide)}},s.PopBase);t.Dialog=function(){return u||(u=new l,u.init()),u}()});]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
       <url>http://darrencheng0817.github.io/static/api/js/component/qrcode.js</url>
       <content type="html"><![CDATA[window._bd_share_main.F.module("component/qrcode",function(e,t){function n(e){this.mode=i.MODE_8BIT_BYTE,this.data=e}function r(e,t){this.typeNumber=e,this.errorCorrectLevel=t,this.modules=null,this.moduleCount=0,this.dataCache=null,this.dataList=new Array}function l(e,t){if(e.length==undefined)throw new Error(e.length+"/"+t);var n=0;while(n<e.length&&e[n]==0)n++;this.num=new array(e.length-n+t);for(var="" r="0;r<e.length-n;r++)this.num[r]=e[r+n]}function" c(e,t){this.totalcount="e,this.dataCount=t}function" h(){this.buffer="new" array,this.length="0}n.prototype={getLength:function(e){return" this.data.length},write:function(e){for(var="" t="0;t<this.data.length;t++)e.put(this.data.charCodeAt(t),8)}},r.prototype={addData:function(e){var" n(e);this.datalist.push(t),this.datacache="null},isDark:function(e,t){if(e<0||this.moduleCount<=e||t<0||this.moduleCount<=t)throw" new="" error(e+","+t);return="" this.modules[e][t]},getmodulecount:function(){return="" this.modulecount},make:function(){if(this.typenumber<1){var="" e="1;for(e=1;e<40;e++){var" h,r="0;for(var" i="0;i<t.length;i++)r+=t[i].dataCount;for(var" s="this.dataList[i];n.put(s.mode,4),n.put(s.getLength(),u.getLengthInBits(s.mode,e)),s.write(n)}if(n.getLengthInBits()<=r*8)break}this.typeNumber=e}this.makeImpl(!1,this.getBestMaskPattern())},makeImpl:function(e,t){this.moduleCount=this.typeNumber*4+17,this.modules=new" array(this.modulecount);for(var="" n="0;n<this.moduleCount;n++){this.modules[n]=new">=7&&this.setupTypeNumber(e),this.dataCache==null&&(this.dataCache=r.createData(this.typeNumber,this.errorCorrectLevel,this.dataList)),this.mapData(this.dataCache,t)},setupPositionProbePattern:function(e,t){for(var n=-1;n<=7;n++){if(e+n<=-1||this.modulecount<=e+n)continue;for(var r="-1;r<=7;r++){if(t+r<=-1||this.moduleCount<=t+r)continue;0<=n&&n<=6&&(r==0||r==6)||0<=r&&r<=6&&(n==0||n==6)||2<=n&&n<=4&&2<=r&&r<=4?this.modules[e+n][t+r]=!0:this.modules[e+n][t+r]=!1}}},getBestMaskPattern:function(){var" e="0,t=0;for(var" n="0;n<8;n++){this.makeImpl(!0,n);var">r)e=r,t=n}return t},createMovieClip:function(e,t,n){var r=e.createEmptyMovieClip(t,n),i=1;this.make();for(var s=0;s<this.modules.length;s++){var o="s*i;for(var" u="0;u<this.modules[s].length;u++){var" a="u*i,f=this.modules[s][u];f&&(r.beginFill(0,100),r.moveTo(a,o),r.lineTo(a+i,o),r.lineTo(a+i,o+i),r.lineTo(a,o+i),r.endFill())}}return" r},setuptimingpattern:function(){for(var="" e="8;e<this.moduleCount-8;e++){if(this.modules[e][6]!=null)continue;this.modules[e][6]=e%2==0}for(var" t="8;t<this.moduleCount-8;t++){if(this.modules[6][t]!=null)continue;this.modules[6][t]=t%2==0}},setupPositionAdjustPattern:function(){var" n="0;n<e.length;n++){var" r="e[t],i=e[n];if(this.modules[r][i]!=null)continue;for(var" s="-2;s<=2;s++)for(var">>n&1)==1;this.modules[Math.floor(n/3)][n%3+this.moduleCount-8-3]=r}for(var n=0;n<18;n++){var r="!e&&(t">>n&1)==1;this.modules[n%3+this.moduleCount-8-3][Math.floor(n/3)]=r}},setupTypeInfo:function(e,t){var n=this.errorCorrectLevel<<3|t,r=u.getbchtypeinfo(n);for(var i="0;i<15;i++){var" s="!e&&(r">>i&1)==1;i<6?this.modules[i][8]=s:i<8?this.modules[i+1][8]=s:this.modules[this.modulecount-15+i][8]=s}for(var i="0;i<15;i++){var" s="!e&&(r">>i&1)==1;i<8?this.modules[8][this.modulecount-i-1]=s:i<9?this.modules[8][15-i-1+1]=s:this.modules[8][15-i-1]=s}this.modules[this.modulecount-8][8]=!e},mapdata:function(e,t){var n="-1,r=this.moduleCount-1,i=7,s=0;for(var" o="this.moduleCount-1;o">0;o-=2){o==6&&o--;for(;;){for(var a=0;a<2;a++)if(this.modules[r][o-a]==null){var f="!1;s<e.length&&(f=(e[s]">>>i&1)==1);var l=u.getMask(t,r,o-a);l&&(f=!f),this.modules[r][o-a]=f,i--,i==-1&&(s++,i=7)}r+=n;if(r<0||this.modulecount<=r){r-=n,n=-n;break}}}}},r.pad0=236,r.pad1=17,r.createdata=function(e,t,n){var i="c.getRSBlocks(e,t),s=new" h;for(var="" o="0;o<n.length;o++){var" a="n[o];s.put(a.mode,4),s.put(a.getLength(),u.getLengthInBits(a.mode,e)),a.write(s)}var" f="0;for(var">f*8)throw new Error("code length overflow. ("+s.getLengthInBits()+">"+f*8+")");s.getLengthInBits()+4<=f*8&&s.put(0,4);while(s.getlengthinbits()%8!=0)s.putbit(!1);for(;;){if(s.getlengthinbits()>=f*8)break;s.put(r.PAD0,8);if(s.getLengthInBits()>=f*8)break;s.put(r.PAD1,8)}return r.createBytes(s,i)},r.createBytes=function(e,t){var n=0,r=0,i=0,s=new Array(t.length),o=new Array(t.length);for(var a=0;a<t.length;a++){var f="t[a].dataCount,c=t[a].totalCount-f;r=Math.max(r,f),i=Math.max(i,c),s[a]=new" array(f);for(var="" h="0;h<s[a].length;h++)s[a][h]=255&e.buffer[h+n];n+=f;var" p="u.getErrorCorrectPolynomial(c),d=new" l(s[a],p.getlength()-1),v="d.mod(p);o[a]=new" array(p.getlength()-1);for(var="" m="h+v.getLength()-o[a].length;o[a][h]=m">=0?v.get(m):0}}var g=0;for(var h=0;h<t.length;h++)g+=t[h].totalcount;var y="new" array(g),b="0;for(var" h="0;h<r;h++)for(var" a="0;a<t.length;a++)h<s[a].length&&(y[b++]=s[a][h]);for(var" y};var="" i="{MODE_NUMBER:1,MODE_ALPHA_NUM:2,MODE_8BIT_BYTE:4,MODE_KANJI:8},s={L:1,M:0,Q:3,H:2},o={PATTERN000:0,PATTERN001:1,PATTERN010:2,PATTERN011:3,PATTERN100:4,PATTERN101:5,PATTERN110:6,PATTERN111:7},u={PATTERN_POSITION_TABLE:[[],[6,18],[6,22],[6,26],[6,30],[6,34],[6,22,38],[6,24,42],[6,26,46],[6,28,50],[6,30,54],[6,32,58],[6,34,62],[6,26,46,66],[6,26,48,70],[6,26,50,74],[6,30,54,78],[6,30,56,82],[6,30,58,86],[6,34,62,90],[6,28,50,72,94],[6,26,50,74,98],[6,30,54,78,102],[6,28,54,80,106],[6,32,58,84,110],[6,30,58,86,114],[6,34,62,90,118],[6,26,50,74,98,122],[6,30,54,78,102,126],[6,26,52,78,104,130],[6,30,56,82,108,134],[6,34,60,86,112,138],[6,30,58,86,114,142],[6,34,62,90,118,146],[6,30,54,78,102,126,150],[6,24,50,76,102,128,154],[6,28,54,80,106,132,158],[6,32,58,84,110,136,162],[6,26,54,82,110,138,166],[6,30,58,86,114,142,170]],G15:1335,G18:7973,G15_MASK:21522,getBCHTypeInfo:function(e){var" t="e<<10;while(u.getBCHDigit(t)-u.getBCHDigit(u.G15)">=0)t^=u.G15<<u.getbchdigit(t)-u.getbchdigit(u.g15);return(e<<10|t)^u.g15_mask},getbchtypenumber:function(e){var t="e<<12;while(u.getBCHDigit(t)-u.getBCHDigit(u.G18)">=0)t^=u.G18<<u.getbchdigit(t)-u.getbchdigit(u.g18);return e<<12|t},getbchdigit:function(e){var="" t="0;while(e!=0)t++,e">>>=1;return t},getPatternPosition:function(e){return u.PATTERN_POSITION_TABLE[e-1]},getMask:function(e,t,n){switch(e){case o.PATTERN000:return(t+n)%2==0;case o.PATTERN001:return t%2==0;case o.PATTERN010:return n%3==0;case o.PATTERN011:return(t+n)%3==0;case o.PATTERN100:return(Math.floor(t/2)+Math.floor(n/3))%2==0;case o.PATTERN101:return t*n%2+t*n%3==0;case o.PATTERN110:return(t*n%2+t*n%3)%2==0;case o.PATTERN111:return(t*n%3+(t+n)%2)%2==0;default:throw new Error("bad maskPattern:"+e)}},getErrorCorrectPolynomial:function(e){var t=new l([1],0);for(var n=0;n<e;n++)t=t.multiply(new l([1,a.gexp(n)],0));return="" t},getlengthinbits:function(e,t){if(1<="t&&t<10)switch(e){case" i.mode_number:return="" 10;case="" i.mode_alpha_num:return="" 9;case="" i.mode_8bit_byte:return="" 8;case="" i.mode_kanji:return="" 8;default:throw="" new="" error("mode:"+e)}else="" if(t<27)switch(e){case="" 12;case="" 11;case="" 16;case="" 10;default:throw="" error("mode:"+e)}else{if(!(t<41))throw="" error("type:"+t);switch(e){case="" 14;case="" 13;case="" 12;default:throw="" error("mode:"+e)}}},getlostpoint:function(e){var="" t="e.getModuleCount(),n=0;for(var" r="0;r<t;r++)for(var" i="0;i<t;i++){var" s="0,o=e.isDark(r,i);for(var" u="-1;u<=1;u++){if(r+u<0||t<=r+u)continue;for(var" a="-1;a<=1;a++){if(i+a<0||t<=i+a)continue;if(u==0&&a==0)continue;o==e.isDark(r+u,i+a)&&s++}}s">5&&(n+=3+s-5)}for(var r=0;r<t-1;r++)for(var i="0;i<t-1;i++){var" f="0;e.isDark(r,i)&&f++,e.isDark(r+1,i)&&f++,e.isDark(r,i+1)&&f++,e.isDark(r+1,i+1)&&f++;if(f==0||f==4)n+=3}for(var" r="0;r<t;r++)for(var" l="0;for(var" c="Math.abs(100*l/t/t-50)/5;return" n+="c*10,n}},a={glog:function(e){if(e<1)throw" new="" error("glog("+e+")");return="" a.log_table[e]},gexp:function(e){while(e<0)e+="255;while(e">=256)e-=255;return a.EXP_TABLE[e]},EXP_TABLE:new Array(256),LOG_TABLE:new Array(256)};for(var f=0;f<8;f++)a.exp_table[f]=1<<f;for(var f="8;f<256;f++)a.EXP_TABLE[f]=a.EXP_TABLE[f-4]^a.EXP_TABLE[f-5]^a.EXP_TABLE[f-6]^a.EXP_TABLE[f-8];for(var" this.num[e]},getlength:function(){return="" this.num.length},multiply:function(e){var="" t="new" array(this.getlength()+e.getlength()-1);for(var="" n="0;n<this.getLength();n++)for(var" r="0;r<e.getLength();r++)t[n+r]^=a.gexp(a.glog(this.get(n))+a.glog(e.get(r)));return" new="" l(t,0)},mod:function(e){if(this.getlength()-e.getlength()<0)return="" this;var="" array(this.getlength());for(var="" l(n,0)).mod(e)}},c.rs_block_table="[[1,26,19],[1,26,16],[1,26,13],[1,26,9],[1,44,34],[1,44,28],[1,44,22],[1,44,16],[1,70,55],[1,70,44],[2,35,17],[2,35,13],[1,100,80],[2,50,32],[2,50,24],[4,25,9],[1,134,108],[2,67,43],[2,33,15,2,34,16],[2,33,11,2,34,12],[2,86,68],[4,43,27],[4,43,19],[4,43,15],[2,98,78],[4,49,31],[2,32,14,4,33,15],[4,39,13,1,40,14],[2,121,97],[2,60,38,2,61,39],[4,40,18,2,41,19],[4,40,14,2,41,15],[2,146,116],[3,58,36,2,59,37],[4,36,16,4,37,17],[4,36,12,4,37,13],[2,86,68,2,87,69],[4,69,43,1,70,44],[6,43,19,2,44,20],[6,43,15,2,44,16],[4,101,81],[1,80,50,4,81,51],[4,50,22,4,51,23],[3,36,12,8,37,13],[2,116,92,2,117,93],[6,58,36,2,59,37],[4,46,20,6,47,21],[7,42,14,4,43,15],[4,133,107],[8,59,37,1,60,38],[8,44,20,4,45,21],[12,33,11,4,34,12],[3,145,115,1,146,116],[4,64,40,5,65,41],[11,36,16,5,37,17],[11,36,12,5,37,13],[5,109,87,1,110,88],[5,65,41,5,66,42],[5,54,24,7,55,25],[11,36,12],[5,122,98,1,123,99],[7,73,45,3,74,46],[15,43,19,2,44,20],[3,45,15,13,46,16],[1,135,107,5,136,108],[10,74,46,1,75,47],[1,50,22,15,51,23],[2,42,14,17,43,15],[5,150,120,1,151,121],[9,69,43,4,70,44],[17,50,22,1,51,23],[2,42,14,19,43,15],[3,141,113,4,142,114],[3,70,44,11,71,45],[17,47,21,4,48,22],[9,39,13,16,40,14],[3,135,107,5,136,108],[3,67,41,13,68,42],[15,54,24,5,55,25],[15,43,15,10,44,16],[4,144,116,4,145,117],[17,68,42],[17,50,22,6,51,23],[19,46,16,6,47,17],[2,139,111,7,140,112],[17,74,46],[7,54,24,16,55,25],[34,37,13],[4,151,121,5,152,122],[4,75,47,14,76,48],[11,54,24,14,55,25],[16,45,15,14,46,16],[6,147,117,4,148,118],[6,73,45,14,74,46],[11,54,24,16,55,25],[30,46,16,2,47,17],[8,132,106,4,133,107],[8,75,47,13,76,48],[7,54,24,22,55,25],[22,45,15,13,46,16],[10,142,114,2,143,115],[19,74,46,4,75,47],[28,50,22,6,51,23],[33,46,16,4,47,17],[8,152,122,4,153,123],[22,73,45,3,74,46],[8,53,23,26,54,24],[12,45,15,28,46,16],[3,147,117,10,148,118],[3,73,45,23,74,46],[4,54,24,31,55,25],[11,45,15,31,46,16],[7,146,116,7,147,117],[21,73,45,7,74,46],[1,53,23,37,54,24],[19,45,15,26,46,16],[5,145,115,10,146,116],[19,75,47,10,76,48],[15,54,24,25,55,25],[23,45,15,25,46,16],[13,145,115,3,146,116],[2,74,46,29,75,47],[42,54,24,1,55,25],[23,45,15,28,46,16],[17,145,115],[10,74,46,23,75,47],[10,54,24,35,55,25],[19,45,15,35,46,16],[17,145,115,1,146,116],[14,74,46,21,75,47],[29,54,24,19,55,25],[11,45,15,46,46,16],[13,145,115,6,146,116],[14,74,46,23,75,47],[44,54,24,7,55,25],[59,46,16,1,47,17],[12,151,121,7,152,122],[12,75,47,26,76,48],[39,54,24,14,55,25],[22,45,15,41,46,16],[6,151,121,14,152,122],[6,75,47,34,76,48],[46,54,24,10,55,25],[2,45,15,64,46,16],[17,152,122,4,153,123],[29,74,46,14,75,47],[49,54,24,10,55,25],[24,45,15,46,46,16],[4,152,122,18,153,123],[13,74,46,32,75,47],[48,54,24,14,55,25],[42,45,15,32,46,16],[20,147,117,4,148,118],[40,75,47,7,76,48],[43,54,24,22,55,25],[10,45,15,67,46,16],[19,148,118,6,149,119],[18,75,47,31,76,48],[34,54,24,34,55,25],[20,45,15,61,46,16]],c.getRSBlocks=function(e,t){var" error("bad="" rs="" block="" @="" typenumber:"+e+"="" errorcorrectlevel:"+t);var="" array;for(var="" s="0;s<r;s++){var" o="n[s*3+0],u=n[s*3+1],a=n[s*3+2];for(var" c(u,a))}return="" i},c.getrsblocktable="function(e,t){switch(t){case" s.l:return="" c.rs_block_table[(e-1)*4+0];case="" s.m:return="" c.rs_block_table[(e-1)*4+1];case="" s.q:return="" c.rs_block_table[(e-1)*4+2];case="" s.h:return="" c.rs_block_table[(e-1)*4+3];default:return="" undefined}},h.prototype="{get:function(e){var">>>7-e%8&1)==1},put:function(e,t){for(var n=0;n<t;n++)this.putbit((e>>>t-n-1&1)==1)},getLengthInBits:function(){return this.length},putBit:function(e){var t=Math.floor(this.length/8);this.buffer.length<=t&&this.buffer.push(0),e&&(this.buffer[t]|=128>>>this.length%8),this.length++}},t.QRCode=r,t.QRErrorCorrectLevel=s});</=t&&this.buffer.push(0),e&&(this.buffer[t]|=128></t;n++)this.putbit((e></8;f++)a.exp_table[f]=1<<f;for(var></t-1;r++)for(var></e;n++)t=t.multiply(new></u.getbchdigit(t)-u.getbchdigit(u.g18);return></u.getbchdigit(t)-u.getbchdigit(u.g15);return(e<<10|t)^u.g15_mask},getbchtypenumber:function(e){var></t.length;h++)g+=t[h].totalcount;var></t.length;a++){var></=f*8&&s.put(0,4);while(s.getlengthinbits()%8!=0)s.putbit(!1);for(;;){if(s.getlengthinbits()></0||this.modulecount<=r){r-=n,n=-n;break}}}}},r.pad0=236,r.pad1=17,r.createdata=function(e,t,n){var></2;a++)if(this.modules[r][o-a]==null){var></8?this.modules[8][this.modulecount-i-1]=s:i<9?this.modules[8][15-i-1+1]=s:this.modules[8][15-i-1]=s}this.modules[this.modulecount-8][8]=!e},mapdata:function(e,t){var></6?this.modules[i][8]=s:i<8?this.modules[i+1][8]=s:this.modules[this.modulecount-15+i][8]=s}for(var></3|t,r=u.getbchtypeinfo(n);for(var></18;n++){var></this.modules.length;s++){var></=7;n++){if(e+n<=-1||this.modulecount<=e+n)continue;for(var></e.length&&e[n]==0)n++;this.num=new>]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>http://darrencheng0817.github.io/static/api/js/trans/trans_weixin.js</url>
-      <content type="html"><![CDATA[window._bd_share_main.F.module("trans/trans_weixin",function(e,t){var n="bdshare_weixin_qrcode_dialog",r="",i=0,s,o,u,a={},f=e("base/tangram").T,l=e("conf/const").URLS,c=function(e){var t=Math.round(200/e.length);t=t<2?2:t,i=t*e.length;var n="<table style="direction:ltr;border: 0; width:" +i+'px;="" border-collapse:="" collapse;background-color:#fff;margin:0="" auto;"="" align="center">',r=[n],s="";return f.each(e,function(e,n){r.push("<tr>"),f.each(n,function(e,n){s='<td style="width:'+t+" px;height:"+t+"px;padding:0;margin:0;border:none;background:#"+(n?"000":"fff")+'"=""></td>',r.push(s)})}),r.push(""),r.join("")},h=function(e,t){window._bd_share_main.F.use("component/qrcode",function(t){var n=t.QRCode,r=t.QRErrorCorrectLevel,o=new n(-1,r.L);o.addData(e),o.make();var a=c(o.modules),l=f(a).appendTo(u.empty());v(i),y(),s.attr("data-url",e)})},p=function(e,t){var n=l.shortUrl+"?"+f.ajax.param({url:e});f.sio(n).callByServer(function(n){if(n&&n.error==0)t(n.data.short_url);else{var r=e;h(r,!0)}})},d=function(){s.attr("data-url")!=r&&(u.html("\u6b63\u5728\u52a0\u8f7d"),r.length>200?p(r,function(e){h(e,!0)}):h(r))},v=function(e){var t=(e>220?e:220)+20,n=f(".bd_weixin_popup_foot").height()+f(".bd_weixin_popup_head").height()+e+30;s.css({width:t,height:n})},m=function(){s=f("#"+n),o=f("#"+n+"_bg");if(s.length<1){var e="<iframe id="" +n+'_bg"="" class="bd_weixin_popup_bg">',t=['<div id="'+n+'" class="bd_weixin_popup">','<div class="bd_weixin_popup_head">',"<span>\u5206\u4eab\u5230\u5fae\u4fe1\u670b\u53cb\u5708</span>",'<a href="#" onclick="return false;" class="bd_weixin_popup_close">&times;</a>',"</div>",'<div id="'+n+'_qr" class="bd_weixin_popup_main"></div>','<div class="bd_weixin_popup_foot">\u6253\u5f00\u5fae\u4fe1\uff0c\u70b9\u51fb\u5e95\u90e8\u7684\u201c\u53d1\u73b0\u201d\uff0c<br>\u4f7f\u7528\u201c\u626b\u4e00\u626b\u201d\u5373\u53ef\u5c06\u7f51\u9875\u5206\u4eab\u81f3\u670b\u53cb\u5708\u3002</div>',"</div>"].join("");o=f(e).appendTo("body"),s=f(t).appendTo("body"),g()}u=s.find("#"+n+"_qr"),b()},g=function(){s.find(".bd_weixin_popup_close").click(w),f("body").on("keydown",function(e){e.keyCode==27&&w()}),f(window).resize(function(){y()})},y=function(){var e=f(window).scrollTop(),t=s.outerWidth(),n=s.outerHeight(),r=f(window).width(),i=f(window).height(),u=(i-n)/2+e,a=(r-t)/2;u=u</1){var></tr></2?2:t,i=t*e.length;var>]]></content>
     </entry>
     
     <entry>
@@ -229,14 +363,20 @@ padding: 0;
     
     <entry>
       <title></title>
-      <url>http://darrencheng0817.github.io/static/api/js/view/share_view.js</url>
-      <content type="html"><![CDATA[window._bd_share_main.F.module("view/share_view",function(e,t,n){var r=e("base/tangram").T,i=e("base/class").Class,s=e("conf/const"),o=e("view/view_base"),u={btn:"bdsharebuttonbox",count:"bds_count"};t.View=i.create(function(e){function o(){var o=e.tag||"";return r("."+u.btn).each(function(e,u){if(!o||r(u).attr(s.CONFIG_TAG_ATTR)==o)t._entities.push(u),r(u).removeClass(function(e,t){var n=t.match(/bdshare-button-style\d*-\d*/g);if(n)return n.join(" ")}),r(u).addClass("bdshare-button-style"+n+"-"+i)}),t._entities}function a(){if(e.bdCustomStyle){var t=document.createElement("link");t.href=e.bdCustomStyle,t.rel="styleSheet",t.type="text/css",document.getElementsByTagName("head")[0].appendChild(t)}else window._bd_share_main.F.use("share_style"+n+"_"+i+".css")}function f(){r("."+u.btn).each(function(e,t){r(t).children("a,span").each(function(e,t){var n=r(t).attr(s.CMD_ATTR);n&&window._bd_share_main.F.use("component/partners",function(e){var i=e.partners,s=i[n]?"\u5206\u4eab\u5230"+i[n].name:"";!r(t).attr("title")&&s&&r(t).attr("title",s)})})})}var t=this,n=e.bdStyle||0,i="|16|24|32|".indexOf("|"+e.bdSize+"|")>-1?e.bdSize:16;t._buttonType=0,t.render=function(e){o(),f()},t._init=function(){a(),r(t._entities).find("."+u.count).length>0&&t.fire("getsharecount")},t.setNumber=function(e,n){r(t._entities).find("."+u.count).html(n).attr("title","\u7d2f\u8ba1\u5206\u4eab"+e+"\u6b21")}},o.ViewBase)});]]></content>
+      <url>http://darrencheng0817.github.io/static/api/js/share/share_api.js</url>
+      <content type="html"><![CDATA[window._bd_share_main.F.module("share/share_api",function(e,t,n){var r=e("base/tangram").T,i=e("base/class").Class,s=e("component/comm_tools"),o=e("share/api_base");t.Api=i.create(function(e){function r(t){window._bd_share_main.F.use("trans/data",function(n){n.get({type:"share_count",url:e.bdUrl||s.getPageUrl(),callback:function(e,n){var r={count:e,display:n};t&&t(r)}})})}var t=this,n={count:0,clicked:!1};t._init=function(){var e=t.getView();e.render(),e.on("getsharecount",function(){r(function(t){n.count=t.count,e.setNumber(t.count,t.display)})}),e.init()},t._processAction=function(e){return{data:{type:"share"}}}},o.ApiBase)});]]></content>
     </entry>
     
     <entry>
       <title></title>
-      <url>http://darrencheng0817.github.io/static/api/js/share/share_api.js</url>
-      <content type="html"><![CDATA[window._bd_share_main.F.module("share/share_api",function(e,t,n){var r=e("base/tangram").T,i=e("base/class").Class,s=e("component/comm_tools"),o=e("share/api_base");t.Api=i.create(function(e){function r(t){window._bd_share_main.F.use("trans/data",function(n){n.get({type:"share_count",url:e.bdUrl||s.getPageUrl(),callback:function(e,n){var r={count:e,display:n};t&&t(r)}})})}var t=this,n={count:0,clicked:!1};t._init=function(){var e=t.getView();e.render(),e.on("getsharecount",function(){r(function(t){n.count=t.count,e.setNumber(t.count,t.display)})}),e.init()},t._processAction=function(e){return{data:{type:"share"}}}},o.ApiBase)});]]></content>
+      <url>http://darrencheng0817.github.io/static/api/js/trans/trans_weixin.js</url>
+      <content type="html"><![CDATA[window._bd_share_main.F.module("trans/trans_weixin",function(e,t){var n="bdshare_weixin_qrcode_dialog",r="",i=0,s,o,u,a={},f=e("base/tangram").T,l=e("conf/const").URLS,c=function(e){var t=Math.round(200/e.length);t=t<2?2:t,i=t*e.length;var n="<table style="direction:ltr;border: 0; width:" +i+'px;="" border-collapse:="" collapse;background-color:#fff;margin:0="" auto;"="" align="center">',r=[n],s="";return f.each(e,function(e,n){r.push("<tr>"),f.each(n,function(e,n){s='<td style="width:'+t+" px;height:"+t+"px;padding:0;margin:0;border:none;background:#"+(n?"000":"fff")+'"=""></td>',r.push(s)})}),r.push(""),r.join("")},h=function(e,t){window._bd_share_main.F.use("component/qrcode",function(t){var n=t.QRCode,r=t.QRErrorCorrectLevel,o=new n(-1,r.L);o.addData(e),o.make();var a=c(o.modules),l=f(a).appendTo(u.empty());v(i),y(),s.attr("data-url",e)})},p=function(e,t){var n=l.shortUrl+"?"+f.ajax.param({url:e});f.sio(n).callByServer(function(n){if(n&&n.error==0)t(n.data.short_url);else{var r=e;h(r,!0)}})},d=function(){s.attr("data-url")!=r&&(u.html("\u6b63\u5728\u52a0\u8f7d"),r.length>200?p(r,function(e){h(e,!0)}):h(r))},v=function(e){var t=(e>220?e:220)+20,n=f(".bd_weixin_popup_foot").height()+f(".bd_weixin_popup_head").height()+e+30;s.css({width:t,height:n})},m=function(){s=f("#"+n),o=f("#"+n+"_bg");if(s.length<1){var e="<iframe id="" +n+'_bg"="" class="bd_weixin_popup_bg">',t=['<div id="'+n+'" class="bd_weixin_popup">','<div class="bd_weixin_popup_head">',"<span>\u5206\u4eab\u5230\u5fae\u4fe1\u670b\u53cb\u5708</span>",'<a href="#" onclick="return false;" class="bd_weixin_popup_close">&times;</a>',"</div>",'<div id="'+n+'_qr" class="bd_weixin_popup_main"></div>','<div class="bd_weixin_popup_foot">\u6253\u5f00\u5fae\u4fe1\uff0c\u70b9\u51fb\u5e95\u90e8\u7684\u201c\u53d1\u73b0\u201d\uff0c<br>\u4f7f\u7528\u201c\u626b\u4e00\u626b\u201d\u5373\u53ef\u5c06\u7f51\u9875\u5206\u4eab\u81f3\u670b\u53cb\u5708\u3002</div>',"</div>"].join("");o=f(e).appendTo("body"),s=f(t).appendTo("body"),g()}u=s.find("#"+n+"_qr"),b()},g=function(){s.find(".bd_weixin_popup_close").click(w),f("body").on("keydown",function(e){e.keyCode==27&&w()}),f(window).resize(function(){y()})},y=function(){var e=f(window).scrollTop(),t=s.outerWidth(),n=s.outerHeight(),r=f(window).width(),i=f(window).height(),u=(i-n)/2+e,a=(r-t)/2;u=u</1){var></tr></2?2:t,i=t*e.length;var>]]></content>
+    </entry>
+    
+    <entry>
+      <title></title>
+      <url>http://darrencheng0817.github.io/static/api/js/view/share_view.js</url>
+      <content type="html"><![CDATA[window._bd_share_main.F.module("view/share_view",function(e,t,n){var r=e("base/tangram").T,i=e("base/class").Class,s=e("conf/const"),o=e("view/view_base"),u={btn:"bdsharebuttonbox",count:"bds_count"};t.View=i.create(function(e){function o(){var o=e.tag||"";return r("."+u.btn).each(function(e,u){if(!o||r(u).attr(s.CONFIG_TAG_ATTR)==o)t._entities.push(u),r(u).removeClass(function(e,t){var n=t.match(/bdshare-button-style\d*-\d*/g);if(n)return n.join(" ")}),r(u).addClass("bdshare-button-style"+n+"-"+i)}),t._entities}function a(){if(e.bdCustomStyle){var t=document.createElement("link");t.href=e.bdCustomStyle,t.rel="styleSheet",t.type="text/css",document.getElementsByTagName("head")[0].appendChild(t)}else window._bd_share_main.F.use("share_style"+n+"_"+i+".css")}function f(){r("."+u.btn).each(function(e,t){r(t).children("a,span").each(function(e,t){var n=r(t).attr(s.CMD_ATTR);n&&window._bd_share_main.F.use("component/partners",function(e){var i=e.partners,s=i[n]?"\u5206\u4eab\u5230"+i[n].name:"";!r(t).attr("title")&&s&&r(t).attr("title",s)})})})}var t=this,n=e.bdStyle||0,i="|16|24|32|".indexOf("|"+e.bdSize+"|")>-1?e.bdSize:16;t._buttonType=0,t.render=function(e){o(),f()},t._init=function(){a(),r(t._entities).find("."+u.count).length>0&&t.fire("getsharecount")},t.setNumber=function(e,n){r(t._entities).find("."+u.count).html(n).attr("title","\u7d2f\u8ba1\u5206\u4eab"+e+"\u6b21")}},o.ViewBase)});]]></content>
     </entry>
     
     <entry>

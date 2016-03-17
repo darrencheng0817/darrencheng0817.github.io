@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://darrencheng0817.github.io/2016/03/16/basic-usage-of-jquery/</loc>
+    
+    <lastmod>2016-03-17T04:00:52.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://darrencheng0817.github.io/me/index.html</loc>
+    
+    <lastmod>2016-03-15T06:26:45.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://darrencheng0817.github.io/2016/03/11/First-post/</loc>
+    
+    <lastmod>2016-03-15T04:28:11.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://darrencheng0817.github.io/about/index.html</loc>
     
     <lastmod>2016-03-14T22:48:16.000Z</lastmod>
@@ -16,21 +37,7 @@
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/trans/logger.js</loc>
-    
-    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://darrencheng0817.github.io/static/api/js/share/share_api.js</loc>
-    
-    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/view/share_view.js</loc>
     
     <lastmod>2016-03-14T21:22:46.000Z</lastmod>
     
@@ -44,13 +51,6 @@
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/share/api_base.js</loc>
-    
-    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://darrencheng0817.github.io/static/api/js/view/view_base.js</loc>
     
     <lastmod>2016-03-14T21:22:46.000Z</lastmod>
@@ -58,7 +58,21 @@
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/trans/trans_weixin.js</loc>
+    <loc>http://darrencheng0817.github.io/static/api/js/share/api_base.js</loc>
+    
+    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://darrencheng0817.github.io/static/api/js/view/share_view.js</loc>
+    
+    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://darrencheng0817.github.io/static/api/css/weixin_popup.css</loc>
     
     <lastmod>2016-03-14T21:22:46.000Z</lastmod>
     
@@ -79,14 +93,14 @@
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/static/api/css/weixin_popup.css</loc>
+    <loc>http://darrencheng0817.github.io/static/api/js/trans/trans_weixin.js</loc>
     
     <lastmod>2016-03-14T21:22:46.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/component/qrcode.js</loc>
+    <loc>http://darrencheng0817.github.io/static/api/js/component/partners.js</loc>
     
     <lastmod>2016-03-14T21:22:46.000Z</lastmod>
     
@@ -107,7 +121,7 @@
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/component/partners.js</loc>
+    <loc>http://darrencheng0817.github.io/static/api/js/component/pop_dialog.js</loc>
     
     <lastmod>2016-03-14T21:22:46.000Z</lastmod>
     
@@ -121,16 +135,16 @@
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/static/api/js/component/pop_dialog.js</loc>
+    <loc>http://darrencheng0817.github.io/static/api/js/component/qrcode.js</loc>
     
     <lastmod>2016-03-14T21:22:46.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://darrencheng0817.github.io/2016/03/11/First-post/</loc>
+    <loc>http://darrencheng0817.github.io/static/api/js/trans/logger.js</loc>
     
-    <lastmod>2016-03-14T04:04:59.000Z</lastmod>
+    <lastmod>2016-03-14T21:22:46.000Z</lastmod>
     
   </url>
   
@@ -145,13 +159,6 @@
     <loc>http://darrencheng0817.github.io/Search/index.html</loc>
     
     <lastmod>2016-03-14T03:12:39.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://darrencheng0817.github.io/me/index.html</loc>
-    
-    <lastmod>2016-03-13T11:16:15.000Z</lastmod>
     
   </url>
   
