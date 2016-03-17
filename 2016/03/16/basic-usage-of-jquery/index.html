@@ -33,7 +33,8 @@
   
     <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
   
-  <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+  <!-- <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script> -->
+  <script   src="https://code.jquery.com/jquery-2.2.1.min.js"   integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="   crossorigin="anonymous"></script>
   <script>
       var yiliaConfig = {
           fancybox: true,
@@ -154,7 +155,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/DFS/" style="font-size: 20px;">DFS</a> <a href="/tags/Graph/" style="font-size: 20px;">Graph</a> <a href="/tags/Other/" style="font-size: 10px;">Other</a> <a href="/tags/Topological-Sort/" style="font-size: 10px;">Topological Sort</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
+                        <a href="/tags/Announcement/" style="font-size: 10px;">Announcement</a> <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/DFS/" style="font-size: 20px;">DFS</a> <a href="/tags/Graph/" style="font-size: 20px;">Graph</a> <a href="/tags/Other/" style="font-size: 10px;">Other</a> <a href="/tags/Topological-Sort/" style="font-size: 10px;">Topological Sort</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
                     </div>
                 </section>
                 
@@ -437,6 +438,12 @@
 
     <nav id="article-nav">
         
+            <div id="article-nav-newer" class="article-nav-title">
+                <a href="/2016/03/16/announcement/">
+                    Announcement
+                </a>
+            </div>
+        
         
             <div id="article-nav-older" class="article-nav-title">
                 <a href="/2016/03/12/Detect-cycle-in-directed-graph/">
@@ -518,7 +525,9 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/03/16/announcement/" title="上一篇: Announcement">
+                <i class="fa fa-angle-left"></i>
+            </a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
@@ -530,7 +539,7 @@
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/basic-usage-of-jquery/">Basic usage of jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/12/Detect-cycle-in-directed-graph/">Detect cycle in directed graph</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/Detect-cycle-in-undirected-graph/">Detect cycle in undirected graph</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/First-post/">First post</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/announcement/">Announcement</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/basic-usage-of-jquery/">Basic usage of jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/12/Detect-cycle-in-directed-graph/">Detect cycle in directed graph</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/Detect-cycle-in-undirected-graph/">Detect cycle in undirected graph</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/First-post/">First post</a></li></ul>
     <script>
         $(".post-list").addClass("toc-article");
         $(".post-list-item a").attr("target","_blank");
