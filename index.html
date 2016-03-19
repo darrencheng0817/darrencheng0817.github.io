@@ -159,7 +159,7 @@
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <a href="/tags/Announcement/" style="font-size: 10px;">Announcement</a> <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/DFS/" style="font-size: 20px;">DFS</a> <a href="/tags/Graph/" style="font-size: 20px;">Graph</a> <a href="/tags/Other/" style="font-size: 10px;">Other</a> <a href="/tags/Topological-Sort/" style="font-size: 10px;">Topological Sort</a> <a href="/tags/Web/" style="font-size: 10px;">Web</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
+                        <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Announcement/" style="font-size: 10px;">Announcement</a> <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/DFS/" style="font-size: 20px;">DFS</a> <a href="/tags/Graph/" style="font-size: 20px;">Graph</a> <a href="/tags/Other/" style="font-size: 10px;">Other</a> <a href="/tags/Topological-Sort/" style="font-size: 10px;">Topological Sort</a> <a href="/tags/Web/" style="font-size: 20px;">Web</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
                     </div>
                 </section>
                 
@@ -381,6 +381,77 @@
 
 
   
+    <article id="post-enable-ajax-cors" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/17/enable-ajax-cors/" class="article-date">
+      <time datetime="2016-03-17T23:57:00.000Z" itemprop="datePublished">03-17-2016</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/17/enable-ajax-cors/">Enable Ajax CORS(Cross-Origin Resource Sharing)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+              <hr>
+<p>Several days ago, I tried to use Ajax to get some data from my REST API running on a different server.  Following error shown up:</p>
+<blockquote>
+<p>XMLHttpRequest cannot load <strong><strong>. No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘</strong></strong>‘ is therefore not allowed access.</p>
+</blockquote>
+<p>I’m pretty sure my API worded well, because my moble app was able to get the data. It turned out that in the web application security model there is a <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">same-origin policy</a>. Under the policy, a web browser permits scripts contained in a first web page to access data in a second web page, but only if both web pages have the same origin.</p>
+<p>There are many way to do <a href="https://www.w3.org/TR/cors/">Cross-Origin Resource Sharing</a>. You could yous Jsonp, but it only allow GET request, POST would be changed into GET. Besides that, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS">HTTP access control</a> is the best apporach I beieve.<br>
+          
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+    </div>
+
+
+      
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+    </div>
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/17/enable-ajax-cors/#more">More >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-basic-usage-of-jquery" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -423,7 +494,7 @@
       
       
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Web-Develop/">Web Develop</a>
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
     </div>
 
 

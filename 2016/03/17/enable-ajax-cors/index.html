@@ -3,21 +3,24 @@
 <head>
   <meta charset="utf-8">
   
-  <title>First post | DarrenLife</title>
+  <title>Enable Ajax CORS(Cross-Origin Resource Sharing) | DarrenLife</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Darren’s blog! 
-This static website is built by Hexo, which is a node.js framework. The website is hosted both on github pages and coding.net(For chinese visitors). So for visitors in Chin">
+  <meta name="description" content="Several days ago, I tried to use Ajax to get some data from my REST API running on a different server.  Following error shown up:
+
+XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
 <meta property="og:type" content="article">
-<meta property="og:title" content="First post">
-<meta property="og:url" content="http://darrencheng0817.github.io/2016/03/11/First-post/index.html">
+<meta property="og:title" content="Enable Ajax CORS(Cross-Origin Resource Sharing)">
+<meta property="og:url" content="http://darrencheng0817.github.io/2016/03/17/enable-ajax-cors/index.html">
 <meta property="og:site_name" content="DarrenLife">
-<meta property="og:description" content="Welcome to Darren’s blog! 
-This static website is built by Hexo, which is a node.js framework. The website is hosted both on github pages and coding.net(For chinese visitors). So for visitors in Chin">
-<meta property="og:updated_time" content="2016-03-17T04:23:31.000Z">
+<meta property="og:description" content="Several days ago, I tried to use Ajax to get some data from my REST API running on a different server.  Following error shown up:
+
+XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
+<meta property="og:updated_time" content="2016-03-19T04:17:28.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="First post">
-<meta name="twitter:description" content="Welcome to Darren’s blog! 
-This static website is built by Hexo, which is a node.js framework. The website is hosted both on github pages and coding.net(For chinese visitors). So for visitors in Chin">
+<meta name="twitter:title" content="Enable Ajax CORS(Cross-Origin Resource Sharing)">
+<meta name="twitter:description" content="Several days ago, I tried to use Ajax to get some data from my REST API running on a different server.  Following error shown up:
+
+XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
   
     <link rel="alternative" href="/atom.xml" title="DarrenLife" type="application/atom+xml">
   
@@ -240,11 +243,11 @@ This static website is built by Hexo, which is a node.js framework. The website 
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-First-post" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-enable-ajax-cors" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/11/First-post/" class="article-date">
-      <time datetime="2016-03-12T00:57:00.000Z" itemprop="datePublished">03-11-2016</time>
+      <a href="/2016/03/17/enable-ajax-cors/" class="article-date">
+      <time datetime="2016-03-17T23:57:00.000Z" itemprop="datePublished">03-17-2016</time>
 </a>
     </div>
   
@@ -257,7 +260,7 @@ This static website is built by Hexo, which is a node.js framework. The website 
         
   
     <h1 class="article-title" itemprop="name">
-      First post
+      Enable Ajax CORS(Cross-Origin Resource Sharing)
     </h1>
   
 
@@ -266,13 +269,13 @@ This static website is built by Hexo, which is a node.js framework. The website 
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/other/">other</a>
+    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Other/">Other</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -283,10 +286,18 @@ This static website is built by Hexo, which is a node.js framework. The website 
       
           
         <hr>
-<p>Welcome to Darren’s blog! </p>
-<p>This static website is built by <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>, which is a node.js framework. The website is hosted both on github pages and coding.net(For chinese visitors). So for visitors in China, please go to the <a href="http://darrencheng.coding.me/" target="_blank" rel="external">mirror site</a> which is faster.</p>
-<p>I will write some technique posts or some moments about my life.</p>
-<p>Fight on!</p>
+<p>Several days ago, I tried to use Ajax to get some data from my REST API running on a different server.  Following error shown up:</p>
+<blockquote>
+<p>XMLHttpRequest cannot load <strong><strong>. No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘</strong></strong>‘ is therefore not allowed access.</p>
+</blockquote>
+<p>I’m pretty sure my API worded well, because my moble app was able to get the data. It turned out that in the web application security model there is a <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" target="_blank" rel="external">same-origin policy</a>. Under the policy, a web browser permits scripts contained in a first web page to access data in a second web page, but only if both web pages have the same origin.</p>
+<p>There are many way to do <a href="https://www.w3.org/TR/cors/" target="_blank" rel="external">Cross-Origin Resource Sharing</a>. You could yous Jsonp, but it only allow GET request, POST would be changed into GET. Besides that, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">HTTP access control</a> is the best apporach I beieve.<br><a id="more"></a></p>
+<p>The solution is pretty simpl. You just need to set several attributes in reponse header.</p>
+<p>Here is the code in node.js modifying the http reponse header.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res.header(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>);<span class="comment">//You could also specify domain you want to give access</span></span><br><span class="line">res.header(<span class="string">'Access-Control-Allow-Headers'</span>, <span class="string">'X-Requested-With,Content-Type,Authorization'</span>);</span><br><span class="line">res.header(<span class="string">'Access-Control-Allow-Methods'</span>, <span class="string">'GET,PUT,PATCH,POST,DELETE'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>It would be better to use a middleware to handle this.</p>
+<p>Restify has a plugin to do that.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server.use(restify.CORS(</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//     origins: ['https://foo.com', 'http://bar.com', 'http://baz.com:8081'],   // defaults to ['*']</span></span><br><span class="line"><span class="comment">//     credentials: true,                 // defaults to false</span></span><br><span class="line"><span class="comment">//     headers: ['x-foo']                 // sets expose-headers</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line">));</span><br></pre></td></tr></table></figure>
+<p>Now the error resolved!</p>
 
       
     </div>
@@ -295,13 +306,13 @@ This static website is built by Hexo, which is a node.js framework. The website 
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2016/03/11/First-post/">First post</a></p>
+        <p><span>Title:</span><a href="/2016/03/17/enable-ajax-cors/">Enable Ajax CORS(Cross-Origin Resource Sharing)</a></p>
         <p><span>Author:</span><a href="/" title="Go to Darren Cheng's blog">Darren Cheng</a></p>
-        <p><span>Publish Date:</span>03/11/2016 - 16:57</p>
-        <p><span>Update Date:</span>03/16/2016 - 21:23</p>
+        <p><span>Publish Date:</span>03/17/2016 - 16:57</p>
+        <p><span>Update Date:</span>03/18/2016 - 21:17</p>
         <p>
-            <span>Original Like:</span><a class="post-url" href="/2016/03/11/First-post/" title="First post">http://darrencheng0817.github.io/2016/03/11/First-post/</a>
-            <span class="copy-path" data-clipboard-text="page: http://darrencheng0817.github.io/2016/03/11/First-post/　　author: Darren Cheng" title="copy the link"><i class="fa fa-clipboard"></i></span>
+            <span>Original Like:</span><a class="post-url" href="/2016/03/17/enable-ajax-cors/" title="Enable Ajax CORS(Cross-Origin Resource Sharing)">http://darrencheng0817.github.io/2016/03/17/enable-ajax-cors/</a>
+            <span class="copy-path" data-clipboard-text="page: http://darrencheng0817.github.io/2016/03/17/enable-ajax-cors/　　author: Darren Cheng" title="copy the link"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -314,12 +325,12 @@ This static website is built by Hexo, which is a node.js framework. The website 
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/11/Detect-cycle-in-undirected-graph/">
-                    Detect cycle in undirected graph
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/03/16/announcement/">
+                    Announcement
                 </a>
             </div>
-        
         
     </nav>
 
@@ -412,15 +423,15 @@ This static website is built by Hexo, which is a node.js framework. The website 
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/11/Detect-cycle-in-undirected-graph/" title="上一篇: Detect cycle in undirected graph">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+            <a href="/2016/03/16/announcement/" title="下一篇: Announcement">
+                <i class="fa fa-angle-right"></i>
+            </a>
         
     </div>
 

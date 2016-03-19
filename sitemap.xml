@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://darrencheng0817.github.io/2016/03/16/basic-usage-of-jquery/</loc>
+    
+    <lastmod>2016-03-19T04:17:34.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://darrencheng0817.github.io/2016/03/17/enable-ajax-cors/</loc>
+    
+    <lastmod>2016-03-19T04:17:28.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://darrencheng0817.github.io/2016/03/16/announcement/</loc>
     
     <lastmod>2016-03-17T04:27:30.000Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://darrencheng0817.github.io/2016/03/11/First-post/</loc>
     
     <lastmod>2016-03-17T04:23:31.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://darrencheng0817.github.io/2016/03/16/basic-usage-of-jquery/</loc>
-    
-    <lastmod>2016-03-17T04:00:52.000Z</lastmod>
     
   </url>
   

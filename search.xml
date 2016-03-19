@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title><![CDATA[Enable Ajax CORS(Cross-Origin Resource Sharing)]]></title>
+      <url>http://darrencheng0817.github.io/2016/03/17/enable-ajax-cors/</url>
+      <content type="html"><![CDATA[<hr>
+<p>Several days ago, I tried to use Ajax to get some data from my REST API running on a different server.  Following error shown up:</p>
+<blockquote>
+<p>XMLHttpRequest cannot load <strong><strong>. No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘</strong></strong>‘ is therefore not allowed access.</p>
+</blockquote>
+<p>I’m pretty sure my API worded well, because my moble app was able to get the data. It turned out that in the web application security model there is a <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" target="_blank" rel="external">same-origin policy</a>. Under the policy, a web browser permits scripts contained in a first web page to access data in a second web page, but only if both web pages have the same origin.</p>
+<p>There are many way to do <a href="https://www.w3.org/TR/cors/" target="_blank" rel="external">Cross-Origin Resource Sharing</a>. You could yous Jsonp, but it only allow GET request, POST would be changed into GET. Besides that, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">HTTP access control</a> is the best apporach I beieve.<br><a id="more"></a></p>
+<p>The solution is pretty simpl. You just need to set several attributes in reponse header.</p>
+<p>Here is the code in node.js modifying the http reponse header.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res.header(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>);<span class="comment">//You could also specify domain you want to give access</span></span><br><span class="line">res.header(<span class="string">'Access-Control-Allow-Headers'</span>, <span class="string">'X-Requested-With,Content-Type,Authorization'</span>);</span><br><span class="line">res.header(<span class="string">'Access-Control-Allow-Methods'</span>, <span class="string">'GET,PUT,PATCH,POST,DELETE'</span>);</span><br></pre></td></tr></table></figure></p>
+<p>It would be better to use a middleware to handle this.</p>
+<p>Restify has a plugin to do that.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server.use(restify.CORS(</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//     origins: ['https://foo.com', 'http://bar.com', 'http://baz.com:8081'],   // defaults to ['*']</span></span><br><span class="line"><span class="comment">//     credentials: true,                 // defaults to false</span></span><br><span class="line"><span class="comment">//     headers: ['x-foo']                 // sets expose-headers</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line">));</span><br></pre></td></tr></table></figure>
+<p>Now the error resolved!</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Announcement]]></title>
       <url>http://darrencheng0817.github.io/2016/03/16/announcement/</url>
       <content type="html"><![CDATA[<hr>
@@ -287,17 +306,17 @@ padding: 0;
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://darrencheng0817.github.io/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Me]]></title>
       <url>http://darrencheng0817.github.io/me/index.html</url>
       <content type="html"><![CDATA[<hr>
 <p>Current master student in University of California. Full-stack developer.</p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>http://darrencheng0817.github.io/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
