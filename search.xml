@@ -306,17 +306,17 @@ padding: 0;
     </entry>
     
     <entry>
+      <title><![CDATA[tags]]></title>
+      <url>http://darrencheng0817.github.io/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Me]]></title>
       <url>http://darrencheng0817.github.io/me/index.html</url>
       <content type="html"><![CDATA[<hr>
 <p>Current master student in University of California. Full-stack developer.</p>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://darrencheng0817.github.io/tags/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
