@@ -281,7 +281,8 @@ padding: 0;
       <title><![CDATA[About]]></title>
       <url>http://darrencheng0817.github.io/about/index.html</url>
       <content type="html"><![CDATA[<hr>
-<p>The site was built on Mar.11, 2016 using <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>, which is a node.js framework. The website is hosted both on github pages and coding.net (For chinese visitors). So for visitors in China, please go to the <a href="http://darrencheng.coding.me/" target="_blank" rel="external">mirror site</a> which is faster.</p>
+<p>The site was built on Mar.11, 2016 using <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>, which is a node.js framework. Beacuse previous blog, built by wordpress, was too slow and hard to maintain. </p>
+<p>The website is hosted both on github pages and coding.net (For chinese visitors). So for visitors in China, please go to the <a href="http://darrencheng.coding.me/" target="_blank" rel="external">mirror site</a> which is faster.</p>
 <a id="more"></a>
 <h1 id="History"><a href="#History" class="headerlink" title="History"></a>History</h1><h2 id="3-14-2016-Custom-404"><a href="#3-14-2016-Custom-404" class="headerlink" title="[3/14/2016] Custom 404"></a>[3/14/2016] Custom 404</h2><ol>
 <li>Added custom 404 page.</li>
@@ -306,17 +307,17 @@ padding: 0;
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://darrencheng0817.github.io/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[Me]]></title>
       <url>http://darrencheng0817.github.io/me/index.html</url>
       <content type="html"><![CDATA[<hr>
 <p>Current master student in University of California. Full-stack developer.</p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>http://darrencheng0817.github.io/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
