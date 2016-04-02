@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Tree traversal | DarrenLife</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Tree is a very common data structure in computer sicence. This post desicibes the traversal of a tree in three orders both iteratively and recursively. 
+Example code written in python.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Tree traversal">
+<meta property="og:url" content="http://darrencheng0817.github.io/2016/04/01/Algorithm/Tree-traversal/index.html">
+<meta property="og:site_name" content="DarrenLife">
+<meta property="og:description" content="Tree is a very common data structure in computer sicence. This post desicibes the traversal of a tree in three orders both iteratively and recursively. 
+Example code written in python.">
+<meta property="og:updated_time" content="2016-04-02T05:56:58.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Tree traversal">
+<meta name="twitter:description" content="Tree is a very common data structure in computer sicence. This post desicibes the traversal of a tree in three orders both iteratively and recursively. 
+Example code written in python.">
+  
+    <link rel="alternative" href="/atom.xml" title="DarrenLife" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/images/logo.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- <script src="//cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script> -->
+  <script   src="https://code.jquery.com/jquery-2.2.1.min.js"   integrity="sha256-gvQgAFzTH6trSrAWoH1iPo9Xc96QxSZ3feW6kem+O00="   crossorigin="anonymous"></script>
+  <script>
+      var yiliaConfig = {
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false,
+      }
+  </script>
+
+  
+      <script>
+          yiliaConfig.rootUrl = "/";
+      </script>
+  
+
+  
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            <img src="/images/logo2.png" class="animated zoomIn">
+        </a>
+        <hgroup>
+          <h1 class="header-author"><a href="/">Darren Cheng</a></h1>
+        </hgroup>
+
+        
+        <p class="header-subtitle">I want to try everything!</p>
+        
+                
+
+
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>Menu</li>
+                        <li>Tags</li>
+                        
+                        <li>Links</li>
+                        
+                        
+                        <li>About</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">Main Page</a></li>
+                        
+                            <li><a href="/archives/">Archives</a></li>
+                        
+                            <li><a href="/tags/">Tages</a></li>
+                        
+                            <li><a href="/Search/">Search</a></li>
+                        
+                            <li><a href="/me/">Me</a></li>
+                        
+                            <li><a href="/about/">About</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/darrencheng0817" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/sitemap.xml" title="RSS"></a></li>
+                            
+                                <li id="Facebook"><a class="Facebook" target="_blank" href="https://www.facebook.com/darrencheng0817" title="Facebook"></a></li>
+                            
+                                <li id="LinkedIn"><a class="LinkedIn" target="_blank" href="https://www.linkedin.com/in/darrencheng0817" title="LinkedIn"></a></li>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/Ajax/" style="font-size: 10px;">Ajax</a> <a href="/tags/Announcement/" style="font-size: 10px;">Announcement</a> <a href="/tags/BFS/" style="font-size: 10px;">BFS</a> <a href="/tags/DFS/" style="font-size: 15px;">DFS</a> <a href="/tags/Graph/" style="font-size: 15px;">Graph</a> <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/MarkDown/" style="font-size: 10px;">MarkDown</a> <a href="/tags/Other/" style="font-size: 10px;">Other</a> <a href="/tags/Topological-Sort/" style="font-size: 10px;">Topological Sort</a> <a href="/tags/Tree/" style="font-size: 10px;">Tree</a> <a href="/tags/Web/" style="font-size: 20px;">Web</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://hexo.io">Hexo</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="https://pages.github.com/">GitHub</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://moxfive.xyz/">MOxFIVE</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">Software Developer</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Main Page">Darren Cheng</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                <img src="/images/logo2.png" class="animated zoomIn">
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Main Page">Darren Cheng</a></h1>
+            </hgroup>
+            
+            <p class="header-subtitle">I want to try everything!</p>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">Main Page</a></li>
+                
+                    <li><a href="/archives/">Archives</a></li>
+                
+                    <li><a href="/tags/">Tages</a></li>
+                
+                    <li><a href="/Search/">Search</a></li>
+                
+                    <li><a href="/me/">Me</a></li>
+                
+                    <li><a href="/about/">About</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <li id="GitHub"><a class="GitHub" target="_blank" href="https://github.com/darrencheng0817" title="GitHub"></a></li>
+                            
+                                <li id="RSS"><a class="RSS" target="_blank" href="/sitemap.xml" title="RSS"></a></li>
+                            
+                                <li id="Facebook"><a class="Facebook" target="_blank" href="https://www.facebook.com/darrencheng0817" title="Facebook"></a></li>
+                            
+                                <li id="LinkedIn"><a class="LinkedIn" target="_blank" href="https://www.linkedin.com/in/darrencheng0817" title="LinkedIn"></a></li>
+                            
+                        </ul>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-Algorithm/Tree-traversal" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/01/Algorithm/Tree-traversal/" class="article-date">
+      <time datetime="2016-04-02T04:26:00.000Z" itemprop="datePublished">04-01-2016</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Tree traversal
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tree/">Tree</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <hr>
+<p>Tree is a very common data structure in computer sicence. This post desicibes the traversal of a tree in three orders both iteratively and recursively. </p>
+<p>Example code written in python.<br><a id="more"></a><br>First, here is the definition for a binary tree node.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="keyword">None</span></span><br><span class="line">        self.right = <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
+<h1 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h1><p>Let’s start with recursion, which is easier to understand.</p>
+<h2 id="Pre-Order"><a href="#Pre-Order" class="headerlink" title="Pre-Order"></a>Pre-Order</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preOrder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    print(root.val)</span><br><span class="line">    preOrder(root.left)</span><br><span class="line">    preOrder(root.right)</span><br></pre></td></tr></table></figure>
+<h2 id="In-Order"><a href="#In-Order" class="headerlink" title="In-Order"></a>In-Order</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inOrder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    inOrder(root.left)</span><br><span class="line">    print(root.val)</span><br><span class="line">    inOrder(root.right)</span><br></pre></td></tr></table></figure>
+<h2 id="Post-Order"><a href="#Post-Order" class="headerlink" title="Post-Order"></a>Post-Order</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postOrder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    postOrder(root.left)</span><br><span class="line">    postOrder(root.right)</span><br><span class="line">    print(root.val)</span><br></pre></td></tr></table></figure>
+<p>You can see that they are very similar. The only difference is when you visit the root node. </p>
+<h1 id="Iteration"><a href="#Iteration" class="headerlink" title="Iteration"></a>Iteration</h1><p>We need an explicit stack to convert an inherently recursive procedures to iterative.</p>
+<h2 id="Pre-Order-1"><a href="#Pre-Order-1" class="headerlink" title="Pre-Order"></a>Pre-Order</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preOrder</span><span class="params">(root)</span>:</span></span><br><span class="line">    res=[]</span><br><span class="line">    stack=[]</span><br><span class="line">    <span class="keyword">while</span> root <span class="keyword">or</span> stack: <span class="comment">#loop for all nodes</span></span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            res.append(root.val)</span><br><span class="line">            stack.append(root) <span class="comment">#put it into stack because we need to go back to it</span></span><br><span class="line">            root=root.left <span class="comment">#set the root to its left child</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            root=stack.pop() <span class="comment">#when reach a node that has no left child we trace back</span></span><br><span class="line">            root=root.right</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<h2 id="In-Order-1"><a href="#In-Order-1" class="headerlink" title="In-Order"></a>In-Order</h2><p>Similar idea.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inOrder</span><span class="params">(root)</span>:</span></span><br><span class="line">    res=[]</span><br><span class="line">    stack=[]</span><br><span class="line">    <span class="keyword">while</span> root <span class="keyword">or</span> stack:</span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            stack.append(root.val)</span><br><span class="line">            root=root.left</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            root=stack.pop()</span><br><span class="line">            res.append(root.val)</span><br><span class="line">            root=root.right</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></p>
+<h2 id="Post-Order-1"><a href="#Post-Order-1" class="headerlink" title="Post-Order"></a>Post-Order</h2><p>More case for post order.<br>When tracing back, if the popped item has a right child and the right child is not processed yet, then make sure right child is processed before root</p>
+<pre><code class="Python"><span class="function"><span class="keyword">def</span> <span class="title">postOrder</span><span class="params">(root)</span>:</span>
+    res=[]
+    stack=[]
+    preNode=<span class="keyword">None</span>
+    <span class="keyword">while</span> root <span class="keyword">or</span> stack:
+        <span class="keyword">if</span> root:
+            stack.append(root)
+            root=root.Left
+        <span class="keyword">else</span>:
+            peekNode=stack[<span class="number">-1</span>]
+            <span class="comment">#the peek node has a right child that haven't been processed</span>
+            <span class="keyword">if</span> peekNode.right <span class="keyword">and</span> preNode!=peekNode.right: 
+                root=peekNode.right
+            <span class="keyword">else</span>:
+                stack.pop()
+                res.append(peekNode.val)
+                preNode=peekNode
+    <span class="keyword">return</span> res
+</code></pre>
+<p>I hope This post helpful.</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>Title:</span><a href="/2016/04/01/Algorithm/Tree-traversal/">Tree traversal</a></p>
+        <p><span>Author:</span><a href="/" title="Go to Darren Cheng's blog">Darren Cheng</a></p>
+        <p><span>Publish Date:</span>04/01/2016 - 21:26</p>
+        <p><span>Update Date:</span>04/01/2016 - 22:56</p>
+        <p>
+            <span>Original Like:</span><a class="post-url" href="/2016/04/01/Algorithm/Tree-traversal/" title="Tree traversal">http://darrencheng0817.github.io/2016/04/01/Algorithm/Tree-traversal/</a>
+            <span class="copy-path" data-clipboard-text="page: http://darrencheng0817.github.io/2016/04/01/Algorithm/Tree-traversal/　　author: Darren Cheng" title="copy the link"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>License:</span><i class="fa fa-creative-commons"></i><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>
+        </p>
+    </div>
+
+
+
+    <nav id="article-nav">
+        
+        
+            <div id="article-nav-older" class="article-nav-title">
+                <a href="/2016/03/23/WebDevelopment/embed-HTML-tags-in-Hexo-markdown/">
+                    Embed HTML tags in Hexo markdown
+                </a>
+            </div>
+        
+    </nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">Contents</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Recursion"><span class="toc-number">1.</span> <span class="toc-text">Recursion</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pre-Order"><span class="toc-number">1.1.</span> <span class="toc-text">Pre-Order</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#In-Order"><span class="toc-number">1.2.</span> <span class="toc-text">In-Order</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Post-Order"><span class="toc-number">1.3.</span> <span class="toc-text">Post-Order</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Iteration"><span class="toc-number">2.</span> <span class="toc-text">Iteration</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Pre-Order-1"><span class="toc-number">2.1.</span> <span class="toc-text">Pre-Order</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#In-Order-1"><span class="toc-number">2.2.</span> <span class="toc-text">In-Order</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Post-Order-1"><span class="toc-number">2.3.</span> <span class="toc-text">Post-Order</span></a></li></ol></li></ol>
+</div>
+<style>
+    .left-col .switch-btn {
+        display: none;
+    }
+    .left-col .switch-area {
+        display: none;
+    }
+</style>
+
+<input type="button" id="tocButton" value="Hide"  title="Show or Hide Contents">
+<script>
+    var valueHide = "Hide";
+    var valueShow = "Contents";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+            $(".switch-btn, .switch-area").fadeOut(300);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+            $(".switch-btn, .switch-area").fadeIn(500);
+        }
+    })
+
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+        $(".switch-btn, .switch-area").show();
+    }
+</script>
+
+
+
+
+    <div class="share">
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56fb3b9f6e837efd"></script>
+<div class="addthis_sharing_toolbox"></div>
+</div>
+
+
+
+    
+        <section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'darrenlifeblog'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+    
+
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+
+        
+            <a href="/2016/03/23/WebDevelopment/embed-HTML-tags-in-Hexo-markdown/" title="下一篇: Embed HTML tags in Hexo markdown">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/04/01/Algorithm/Tree-traversal/">Tree traversal</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/WebDevelopment/embed-HTML-tags-in-Hexo-markdown/">Embed HTML tags in Hexo markdown</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/WebDevelopment/enable-ajax-cors/">Enable Ajax CORS(Cross-Origin Resource Sharing)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/Other/announcement/">Announcement</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/WebDevelopment/basic-usage-of-jquery/">Basic usage of jQuery</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/12/Algorithm/Detect-cycle-in-directed-graph/">Detect cycle in directed graph</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/Algorithm/Detect-cycle-in-undirected-graph/">Detect cycle in undirected graph</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/11/Other/First-post/">First post</a></li></ul>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#toc, .switch-btn, .switch-area").toggle();
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+                $(".switch-btn, .switch-area").fadeToggle(300);
+            }
+        })
+    </script>
+
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2016 Darren Cheng
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank" title="快速、简洁且高效的静态博客框架">Hexo</a>  Theme <a href="https://github.com/MOxFIVE/hexo-theme-yelee" target="_blank" title="简而不减双栏 Hexo 博客主题">Yelee</a> by MOxFIVE
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >Visitors: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">PageViews: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+    </div>
+    
+<script data-main="/js/main.js" src="/js/require.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var iPad = window.navigator.userAgent.indexOf('iPad');
+            if (iPad > -1 || $(".left-col").css("display") === "none") {
+                var bgColorList = ["#9db3f4", "#414141", "#e5a859", "#f5dfc6", "#c084a0", "#847e72", "#cd8390", "#996731"];
+                var bgColor = Math.ceil(Math.random() * (bgColorList.length - 1));
+                $("body").css({"background-color": bgColorList[bgColor], "background-size": "cover"});
+            }
+            else {
+                var backgroundnum = 10;
+                var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+                $("body").css({"background": backgroundimg, "background-attachment": "fixed", "background-size": "cover"});
+            }
+        })
+    </script>
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#" title="Top"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments" title="Comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer" title="Bottom"><i class="fa fa-arrow-down"></i></a>
+</div>
+
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+  </div>
+</body>
+</html>

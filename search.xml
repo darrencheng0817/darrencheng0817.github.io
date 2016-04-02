@@ -4,8 +4,47 @@
   
     
     <entry>
+      <title><![CDATA[Tree traversal]]></title>
+      <url>http://darrencheng0817.github.io/2016/04/01/Algorithm/Tree-traversal/</url>
+      <content type="html"><![CDATA[<hr>
+<p>Tree is a very common data structure in computer sicence. This post desicibes the traversal of a tree in three orders both iteratively and recursively. </p>
+<p>Example code written in python.<br><a id="more"></a><br>First, here is the definition for a binary tree node.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="keyword">None</span></span><br><span class="line">        self.right = <span class="keyword">None</span></span><br></pre></td></tr></table></figure>
+<h1 id="Recursion"><a href="#Recursion" class="headerlink" title="Recursion"></a>Recursion</h1><p>Let’s start with recursion, which is easier to understand.</p>
+<h2 id="Pre-Order"><a href="#Pre-Order" class="headerlink" title="Pre-Order"></a>Pre-Order</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preOrder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    print(root.val)</span><br><span class="line">    preOrder(root.left)</span><br><span class="line">    preOrder(root.right)</span><br></pre></td></tr></table></figure>
+<h2 id="In-Order"><a href="#In-Order" class="headerlink" title="In-Order"></a>In-Order</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inOrder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    inOrder(root.left)</span><br><span class="line">    print(root.val)</span><br><span class="line">    inOrder(root.right)</span><br></pre></td></tr></table></figure>
+<h2 id="Post-Order"><a href="#Post-Order" class="headerlink" title="Post-Order"></a>Post-Order</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">postOrder</span><span class="params">(root)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">        <span class="keyword">return</span> </span><br><span class="line">    postOrder(root.left)</span><br><span class="line">    postOrder(root.right)</span><br><span class="line">    print(root.val)</span><br></pre></td></tr></table></figure>
+<p>You can see that they are very similar. The only difference is when you visit the root node. </p>
+<h1 id="Iteration"><a href="#Iteration" class="headerlink" title="Iteration"></a>Iteration</h1><p>We need an explicit stack to convert an inherently recursive procedures to iterative.</p>
+<h2 id="Pre-Order-1"><a href="#Pre-Order-1" class="headerlink" title="Pre-Order"></a>Pre-Order</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">preOrder</span><span class="params">(root)</span>:</span></span><br><span class="line">    res=[]</span><br><span class="line">    stack=[]</span><br><span class="line">    <span class="keyword">while</span> root <span class="keyword">or</span> stack: <span class="comment">#loop for all nodes</span></span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            res.append(root.val)</span><br><span class="line">            stack.append(root) <span class="comment">#put it into stack because we need to go back to it</span></span><br><span class="line">            root=root.left <span class="comment">#set the root to its left child</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            root=stack.pop() <span class="comment">#when reach a node that has no left child we trace back</span></span><br><span class="line">            root=root.right</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
+<h2 id="In-Order-1"><a href="#In-Order-1" class="headerlink" title="In-Order"></a>In-Order</h2><p>Similar idea.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">inOrder</span><span class="params">(root)</span>:</span></span><br><span class="line">    res=[]</span><br><span class="line">    stack=[]</span><br><span class="line">    <span class="keyword">while</span> root <span class="keyword">or</span> stack:</span><br><span class="line">        <span class="keyword">if</span> root:</span><br><span class="line">            stack.append(root.val)</span><br><span class="line">            root=root.left</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            root=stack.pop()</span><br><span class="line">            res.append(root.val)</span><br><span class="line">            root=root.right</span><br><span class="line">    <span class="keyword">return</span> res</span><br></pre></td></tr></table></figure></p>
+<h2 id="Post-Order-1"><a href="#Post-Order-1" class="headerlink" title="Post-Order"></a>Post-Order</h2><p>More case for post order.<br>When tracing back, if the popped item has a right child and the right child is not processed yet, then make sure right child is processed before root</p>
+<pre><code class="Python"><span class="function"><span class="keyword">def</span> <span class="title">postOrder</span><span class="params">(root)</span>:</span>
+    res=[]
+    stack=[]
+    preNode=<span class="keyword">None</span>
+    <span class="keyword">while</span> root <span class="keyword">or</span> stack:
+        <span class="keyword">if</span> root:
+            stack.append(root)
+            root=root.Left
+        <span class="keyword">else</span>:
+            peekNode=stack[<span class="number">-1</span>]
+            <span class="comment">#the peek node has a right child that haven't been processed</span>
+            <span class="keyword">if</span> peekNode.right <span class="keyword">and</span> preNode!=peekNode.right: 
+                root=peekNode.right
+            <span class="keyword">else</span>:
+                stack.pop()
+                res.append(peekNode.val)
+                preNode=peekNode
+    <span class="keyword">return</span> res
+</code></pre>
+<p>I hope This post helpful.</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Embed HTML tags in Hexo markdown]]></title>
-      <url>http://darrencheng0817.github.io/2016/03/23/embed-HTML-tags-in-Hexo-markdown/</url>
+      <url>http://darrencheng0817.github.io/2016/03/23/WebDevelopment/embed-HTML-tags-in-Hexo-markdown/</url>
       <content type="html"><![CDATA[<hr>
 <p>Hexo use markdown for posts and pages. It is very convenient to write something and the markdown paser will transform it to html pages. But markdown do not support every html tag, sometimes you want to embed a html tag in you post. All tutorial I found on google tell me that just add the tags, the markdown paser is clever enough to recognize them. However, the really thing is the paser will add some addtional <code>&lt;br&gt;</code> tags, which could be annoying.<br><a id="more"></a></p>
 <p>One solution is that you could modify the paser to work as you wish. But I find a simpl way to achieve the goal.</p>
@@ -21,7 +60,7 @@
     
     <entry>
       <title><![CDATA[Enable Ajax CORS(Cross-Origin Resource Sharing)]]></title>
-      <url>http://darrencheng0817.github.io/2016/03/17/enable-ajax-cors/</url>
+      <url>http://darrencheng0817.github.io/2016/03/17/WebDevelopment/enable-ajax-cors/</url>
       <content type="html"><![CDATA[<hr>
 <p>Several days ago, I tried to use Ajax to get some data from my REST API running on a different server.  Following error shown up:</p>
 <blockquote>
@@ -40,7 +79,7 @@
     
     <entry>
       <title><![CDATA[Announcement]]></title>
-      <url>http://darrencheng0817.github.io/2016/03/16/announcement/</url>
+      <url>http://darrencheng0817.github.io/2016/03/16/Other/announcement/</url>
       <content type="html"><![CDATA[<hr>
 <p>Dear visitor:</p>
 <p>Welcome to Darren’s blog! </p>
@@ -51,7 +90,7 @@
     
     <entry>
       <title><![CDATA[Basic usage of jQuery]]></title>
-      <url>http://darrencheng0817.github.io/2016/03/16/basic-usage-of-jquery/</url>
+      <url>http://darrencheng0817.github.io/2016/03/16/WebDevelopment/basic-usage-of-jquery/</url>
       <content type="html"><![CDATA[<hr>
 <blockquote>
 <p>jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers. With a combination of versatility and extensibility, jQuery has changed the way that millions of people write JavaScript.</p>
@@ -189,7 +228,7 @@
     
     <entry>
       <title><![CDATA[Detect cycle in directed graph]]></title>
-      <url>http://darrencheng0817.github.io/2016/03/12/Detect-cycle-in-directed-graph/</url>
+      <url>http://darrencheng0817.github.io/2016/03/12/Algorithm/Detect-cycle-in-directed-graph/</url>
       <content type="html"><![CDATA[<hr>
 <p>Detecting cycle in undirected graph has been discussed in the <a href="http://blog.darrenlife.com/2016/03/11/Detect-cycle-in-undirected-graph/" target="_blank" rel="external">previous post</a>. Now let’s see what happened if it is a directed graph.<br><a id="more"></a>  </p>
 <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>The original BFS and DFS are not working here. Consider the following graph:<br><img src="/images/2016_3_12/1.png" alt="Example graph" width="100" hight="200"><br>There is not cycle in the graph, however, if you do a BFS or DFS, you will get wrong answer. Let’s say you do DFS start from A, then A-&gt;B-&gt;C. Then you go to C from A, found that C is already visited. The algorithm will return ture but there is no cycle.</p>
@@ -213,7 +252,7 @@
     
     <entry>
       <title><![CDATA[Detect cycle in undirected graph]]></title>
-      <url>http://darrencheng0817.github.io/2016/03/11/Detect-cycle-in-undirected-graph/</url>
+      <url>http://darrencheng0817.github.io/2016/03/11/Algorithm/Detect-cycle-in-undirected-graph/</url>
       <content type="html"><![CDATA[<hr>
 <p>In this post, I will discuss how to detect cycle in undirected graph using BFS, DFS and Union-Find.<br><a id="more"></a>  </p>
 <h1 id="BFS-or-DFS"><a href="#BFS-or-DFS" class="headerlink" title="BFS or DFS"></a>BFS or DFS</h1><p>It is very easy to detect cycle in a undirected graph, simple BFS or DFS should work. Use a set to cache the nodes that have been visited. Then during the traversal, if current visiting node is alreadly in the set, there must be a cycle in the graph.</p>
@@ -226,264 +265,12 @@
     
     <entry>
       <title><![CDATA[First post]]></title>
-      <url>http://darrencheng0817.github.io/2016/03/11/First-post/</url>
+      <url>http://darrencheng0817.github.io/2016/03/11/Other/First-post/</url>
       <content type="html"><![CDATA[<hr>
 <p>Welcome to Darren’s blog! </p>
 <p>This static website is built by <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>, which is a node.js framework. The website is hosted both on github pages and coding.net(For chinese visitors). So for visitors in China, please go to the <a href="http://darrencheng.coding.me/" target="_blank" rel="external">mirror site</a> which is faster.</p>
 <p>I will write some technique posts or some moments about my life.</p>
 <p>Fight on!</p>
-]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Snake]]></title>
-      <url>http://darrencheng0817.github.io/2016/03/11/snake/</url>
-      <content type="html"><![CDATA[<p>just a test</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2>
-
-<script type="text/javascript">
-// code by CNwander.
-// common 
-function getElement(str) {
-    return document.getElementById(str);
-}
-function $tag(str,target) {
-    target = target || document;
-    return target.getElementsByTagName(str);
-}
-// global
-// const
-var WIDTH = 20, //网格宽度
-    HEIGHT = 20, //网格高度
-    SAY = ["相当不错，虽然说和CNwander还不是一个级别的","可以啊，再加点油都可以和CNwander媲美了！","一个字，牛，连CNwander都甘拜下风了","差不多行了，别把游戏玩爆了"];
-var len = 3, //蛇的长度
-    speed, //爬行速度
-    gridElems = multiArray(WIDTH,HEIGHT), //单元格对象
-    carrier, //承载对象(食物，障碍，滑板，刹车)
-    snake, //蛇每节的坐标点
-    info, //交互对话
-    btnStart, //开始按钮
-    topScore = len,
-    snakeTimer, //蛇行走计时器
-    brakeTimers = [], //随机刹车
-    skateTimers = [], //随机滑板
-    directkey; // 方向键值 37-40 左上右下
-window.onload = function(){
-info = getElement("say");
-btnStart = getElement("btnStart");
-initGrid(); //网格初始化
-document.onkeydown = attachEvents; //绑定方向事件
-btnStart.onclick = function (e) {
-    btnStart.blur(); //firefox中必须释放焦点
-    start(); //游戏开始
-    btnStart.setAttribute("disabled",true);
-    btnStart.style.color = "#aaa";
-}
-}
-//开始游戏
-function start() {
-    len = 3;
-    speed = 10;
-    directkey = 39;
-    carrier = multiArray(WIDTH,HEIGHT);
-    snake = new Array();
-    clear();
-    initSnake(); //蛇初始化
-    addObject("food");
-    walk();
-    addRandomBrake();
-}
-//创建网格
-function initGrid() {
-    var body = $tag("body")[0];
-    var table = document.createElement("table"),
-    tbody = document.createElement("tbody")
-    for(var j = 0; j < HEIGHT; j++) {  
-        var col = document.createElement("tr");  
-        for(var i = 0; i < WIDTH; i++) {  
-            var row = document.createElement("td");
-            gridElems[i][j] = col.appendChild(row);  
-        }
-        tbody.appendChild(col);  
-    }
-    table.appendChild(tbody);
-    getElement("snakeWrap").appendChild(table);
-}
-//创建蛇
-function initSnake() {
-    var pointer = randomPointer(len-1, len-1, WIDTH/2);
-    for(var i = 0; i < len; i++) {
-        var x = pointer[0] - i,
-        y = pointer[1];
-        snake.push([x,y]);
-        carrier[x][y] = "cover";
-    }
-}
-//添加键盘事件
-function attachEvents(e) {
-    e = e || event;
-    directkey = Math.abs(e.keyCode - directkey) != 2 && e.keyCode > 36 && e.keyCode < 41 ? e.keyCode : directkey; //非方向键、反向无效
-    return false;
-}
-function walk() {
-    if(snakeTimer) window.clearInterval(snakeTimer);
-    snakeTimer = window.setInterval(step, Math.floor(3000/speed));
-}
-function step() {
-    //获取目标点
-    var headX = snake[0][0],
-    headY = snake[0][1];
-    switch(directkey) {
-        case 37: headX -= 1; break;
-        case 38: headY -= 1; break;
-        case 39: headX += 1; break;
-        case 40: headY += 1; break;
-    }
-    //碰到边界，阻挡物，则结束游戏
-    if(headX >= WIDTH || headX < 0 || headY >= HEIGHT || headY < 0 || carrier[headX][headY] == "block" || carrier[headX][headY] == "cover" ) {
-        trace("GAME OVER");
-        if(getText(getElement("score"))*1 < len) trace(len,getElement("score"));
-        btnStart.removeAttribute("disabled");
-        btnStart.style.color = "#000";
-        window.clearInterval(snakeTimer);
-        for(var i = 0; i < brakeTimers.length; i++) window.clearTimeout(brakeTimers[i]);
-        for(var i = 0; i < skateTimers.length; i++) window.clearTimeout(skateTimers[i]);
-        return;
-        }
-    //加速
-    if(len % 4 === 0 && speed < 60 && carrier[headX][headY] == "food") {
-        speed += 5;
-        walk(); 
-        trace("加速！");
-    }
-    //捡到刹车
-    if(carrier[headX][headY] == "brake") {
-        speed = 5;
-        walk();
-        trace("恭喜！捡到刹车一个。");
-    }
-    //遭遇滑板
-    if(carrier[headX][headY] == "skate") {
-        speed += 20;
-        walk();
-        trace("遭遇滑板！");
-    }   
-    //添加阻挡物
-    if(len % 6 === 0 && len < 60 && carrier[headX][headY] == "food") {
-        addObject("block");
-    }   
-    //对话
-    if(len <= 40 && len % 10 === 0) {
-        var cheer = SAY[len/10-1];
-        trace(cheer);
-    }   
-    //吃东西
-    if(carrier[headX][headY] != "food") {
-        var lastX = snake[snake.length-1][0],
-        lastY = snake[snake.length-1][1];
-        carrier[lastX][lastY] = false;
-        gridElems[lastX][lastY].className = "";
-        snake.pop();
-    } else {
-        carrier[headX][headY] = false;
-        trace("吃到食物");
-        addObject("food");
-    }
-    snake.unshift([headX,headY]);
-    carrier[headX][headY] = "cover";
-    gridElems[headX][headY].className = "cover";
-    
-    len = snake.length;
-}
-//添加物品
-function addObject(name) {
-    var p = randomPointer();
-    carrier[p[0]][p[1]] = name;
-    gridElems[p[0]][p[1]].className = name;
-}
-//添加随机数量刹车和滑板
-function addRandomBrake() {
-    var num = randowNum(1,5);
-    for(var i = 0; i < num; i++) {
-        brakeTimers.push( window.setTimeout(function(){addObject("brake")},randowNum(10000,100000)) );
-        skateTimers.push( window.setTimeout(function(){addObject("skate")},randowNum(5000,100000)) );
-    }        
-}
-//输出信息
-function trace(sth,who) {
-    who = who || info;
-    if(document.all) who.innerText = sth;
-    else who.textContent = sth;
-}
-//获取信息
-function getText(target) {
-    if(document.all) return target.innerText;
-    else return target.textContent;
-}
-//创建二维数组
-function multiArray(m,n) {
-    var arr =  new Array(n);
-    for(var i=0; i<m; i++) 
-        arr[i] = new Array(m);
-    return arr;
-}
-//清除画面
-function clear() {
-    for(var y = 0; y < gridElems.length; y++) {
-        for(var x = 0; x < gridElems[y].length; x++) {
-            gridElems[x][y].className = "";
-        }
-    }
-}
-//产生指定范围随机点
-function randomPointer(startX,startY,endX,endY) {
-    startX = startX || 0;
-    startY = startY || 0;
-    endX = endX || WIDTH;
-    endY = endY || HEIGHT;
-    var p = [],
-    x = Math.floor(Math.random()*(endX - startX)) + startX,
-    y = Math.floor(Math.random()*(endY - startY)) + startY;
-    if(carrier[x][y]) return randomPointer(startX,startY,endX,endY);
-    p[0] = x;
-    p[1] = y;
-    return p;
-}
-//产生随机整数
-function randowNum(start,end) {
-    return Math.floor(Math.random()*(end - start)) + start;
-}
-</script>
-<style type="text/css">
-        * {margin:0; padding:0}
-        body {background:#333; -moz-user-select:none; text-align:center; font-size:12px}
-        table {margin:80px auto 10px auto; overflow:hidden; border-collapse:collapse; }
-        td {width:20px; height:20px; border:1px solid #eee; background:#f4f4f4}
-        .cover {background:#39c;}
-        .food {background:#093}
-        .block {background:#333}
-        .brake {background:#f00}
-        .skate {background:#00f}
-        #say {margin-top:50px; color:white}
-        #help {width:420px; margin:0 auto; line-height:17px; color:white}
-        #help span {float:left; margin-right:10px}
-        #help .box {width:15px; height:15px; margin-right:5px; border:1px solid white}
-        #btnStart {clear:both; width:100px; height:30px; margin-top:10px; padding:0; background:#bbb; color:#222; border:1px solid #fff; border-bottom-color:#000; border-right-color:#000; cursor:pointer}
-</style>
-    
-<div id="say">Snake</div>
-    <div id="snakeWrap"></div>
-    <div id="help">
-        <span class="box food"></span><span>Food</span>
-        <span class="box block"></span><span> Bad</span>
-        <span class="box skate"></span><span>Speed Up</span>
-        <span class="box brake"></span><span>Speed Down</span>
-        <span style="float:right">Score<strong id="score">0</strong></span>
-        <input type="button" id="btnStart" value="Start">
-    </div>
-
-
-
 ]]></content>
     </entry>
     
@@ -575,17 +362,17 @@ padding: 0;
     </entry>
     
     <entry>
+      <title><![CDATA[tags]]></title>
+      <url>http://darrencheng0817.github.io/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Me]]></title>
       <url>http://darrencheng0817.github.io/me/index.html</url>
       <content type="html"><![CDATA[<hr>
 <p>Current master student in University of California. Full-stack developer.</p>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://darrencheng0817.github.io/tags/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
