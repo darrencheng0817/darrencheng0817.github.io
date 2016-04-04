@@ -3,24 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Enable Ajax CORS(Cross-Origin Resource Sharing) | DarrenLife</title>
+  <title>Expression Evaluation | DarrenLife</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Several days ago, I tried to use Ajax to get some data from my REST API running on a different server.  Following error shown up:
-
-XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
+  <meta name="description" content="Evaluate an expression represented by a String. Expression can contain parentheses, you can assume parentheses are well-matched. For simplicity, you can assume only binary operations allowed are +,">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Enable Ajax CORS(Cross-Origin Resource Sharing)">
-<meta property="og:url" content="http://darrencheng0817.github.io/2016/03/17/WebDevelopment/enable-ajax-cors/index.html">
+<meta property="og:title" content="Expression Evaluation">
+<meta property="og:url" content="http://darrencheng0817.github.io/2016/04/03/Algorithm/Expression-evaluation/index.html">
 <meta property="og:site_name" content="DarrenLife">
-<meta property="og:description" content="Several days ago, I tried to use Ajax to get some data from my REST API running on a different server.  Following error shown up:
-
-XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
-<meta property="og:updated_time" content="2016-03-19T04:17:28.000Z">
+<meta property="og:description" content="Evaluate an expression represented by a String. Expression can contain parentheses, you can assume parentheses are well-matched. For simplicity, you can assume only binary operations allowed are +,">
+<meta property="og:updated_time" content="2016-04-04T06:50:29.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Enable Ajax CORS(Cross-Origin Resource Sharing)">
-<meta name="twitter:description" content="Several days ago, I tried to use Ajax to get some data from my REST API running on a different server.  Following error shown up:
-
-XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
+<meta name="twitter:title" content="Expression Evaluation">
+<meta name="twitter:description" content="Evaluate an expression represented by a String. Expression can contain parentheses, you can assume parentheses are well-matched. For simplicity, you can assume only binary operations allowed are +,">
   
     <link rel="alternative" href="/atom.xml" title="DarrenLife" type="application/atom+xml">
   
@@ -243,11 +237,11 @@ XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-WebDevelopment/enable-ajax-cors" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-Algorithm/Expression-evaluation" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/17/WebDevelopment/enable-ajax-cors/" class="article-date">
-      <time datetime="2016-03-17T23:57:00.000Z" itemprop="datePublished">03-17-2016</time>
+      <a href="/2016/04/03/Algorithm/Expression-evaluation/" class="article-date">
+      <time datetime="2016-04-04T06:37:14.000Z" itemprop="datePublished">04-03-2016</time>
 </a>
     </div>
   
@@ -260,7 +254,7 @@ XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
         
   
     <h1 class="article-title" itemprop="name">
-      Enable Ajax CORS(Cross-Origin Resource Sharing)
+      Expression Evaluation
     </h1>
   
 
@@ -269,13 +263,13 @@ XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
       <div class="article-info article-info-post">
         
     <div class="article-category tagcloud">
-    <a class="article-category-link" href="/categories/Web-Development/">Web Development</a>
+    <a class="article-category-link" href="/categories/Algorithm/">Algorithm</a>
     </div>
 
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ajax/">Ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Web/">Web</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/stack/">stack</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -286,19 +280,12 @@ XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
       
           
         <hr>
-<p>Several days ago, I tried to use Ajax to get some data from my REST API running on a different server.  Following error shown up:</p>
 <blockquote>
-<p>XMLHttpRequest cannot load <strong><strong>. No ‘Access-Control-Allow-Origin’ header is present on the requested resource. Origin ‘</strong></strong>‘ is therefore not allowed access.</p>
+<p>Evaluate an expression represented by a String. Expression can contain parentheses, you can assume parentheses are well-matched. For simplicity, you can assume only binary operations allowed are +, -, *, and /. </p>
 </blockquote>
-<p>I’m pretty sure my API worded well, because my moble app was able to get the data. It turned out that in the web application security model there is a <a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy" target="_blank" rel="external">same-origin policy</a>. Under the policy, a web browser permits scripts contained in a first web page to access data in a second web page, but only if both web pages have the same origin.</p>
-<p>There are many way to do <a href="https://www.w3.org/TR/cors/" target="_blank" rel="external">Cross-Origin Resource Sharing</a>. You could yous Jsonp, but it only allow GET request, POST would be changed into GET. Besides that, <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="external">HTTP access control</a> is the best apporach I beieve.<br><a id="more"></a></p>
-<p>The solution is pretty simpl. You just need to set several attributes in reponse header.</p>
-<p>Here is the code in node.js modifying the http reponse header.<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">res.header(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>);<span class="comment">//You could also specify domain you want to give access</span></span><br><span class="line">res.header(<span class="string">'Access-Control-Allow-Headers'</span>, <span class="string">'X-Requested-With,Content-Type,Authorization'</span>);</span><br><span class="line">res.header(<span class="string">'Access-Control-Allow-Methods'</span>, <span class="string">'GET,PUT,PATCH,POST,DELETE'</span>);</span><br></pre></td></tr></table></figure></p>
-<p>It would be better to use a middleware to handle this.</p>
-<p>Restify has a plugin to do that.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">server.use(restify.CORS(</span><br><span class="line"><span class="comment">// &#123;</span></span><br><span class="line"><span class="comment">//     origins: ['https://foo.com', 'http://bar.com', 'http://baz.com:8081'],   // defaults to ['*']</span></span><br><span class="line"><span class="comment">//     credentials: true,                 // defaults to false</span></span><br><span class="line"><span class="comment">//     headers: ['x-foo']                 // sets expose-headers</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line">));</span><br></pre></td></tr></table></figure>
-<p>Now the error resolved!</p>
-
+<p>Origin idea from <a href="http://www.geeksforgeeks.org/expression-evaluation/" target="_blank" rel="external">geeksforgeeks.org</a>.<br><a id="more"></a><br>Here is the algorithm:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">1. While there are still tokens to be read in,</span><br><span class="line">  1.1 Get the next token.</span><br><span class="line">  1.2 If the token is:</span><br><span class="line">     1.2.1 A number: push it onto the value stack.</span><br><span class="line">     1.2.2 A variable: get its value, and push onto the value stack.</span><br><span class="line">     1.2.3 A left parenthesis: push it onto the operator stack.</span><br><span class="line">     1.2.4 A right parenthesis:</span><br><span class="line">       1 While the thing on top of the operator stack is not a </span><br><span class="line">         left parenthesis,</span><br><span class="line">           1 Pop the operator from the operator stack.</span><br><span class="line">           2 Pop the value stack twice, getting two operands.</span><br><span class="line">           3 Apply the operator to the operands, in the correct order.</span><br><span class="line">           4 Push the result onto the value stack.</span><br><span class="line">       2 Pop the left parenthesis from the operator stack, and discard it.</span><br><span class="line">     1.2.5 An operator (call it thisOp):</span><br><span class="line">       1 While the operator stack is not empty, and the top thing on the</span><br><span class="line">         operator stack has the same or greater precedence as thisOp,</span><br><span class="line">         1 Pop the operator from the operator stack.</span><br><span class="line">         2 Pop the value stack twice, getting two operands.</span><br><span class="line">         3 Apply the operator to the operands, in the correct order.</span><br><span class="line">         4 Push the result onto the value stack.</span><br><span class="line">       2 Push thisOp onto the operator stack.</span><br><span class="line">2. While the operator stack is not empty,</span><br><span class="line">    1 Pop the operator from the operator stack.</span><br><span class="line">    2 Pop the value stack twice, getting two operands.</span><br><span class="line">    3 Apply the operator to the operands, in the correct order.</span><br><span class="line">    4 Push the result onto the value stack.</span><br><span class="line">3. At this point the operator stack should be empty, and the value</span><br><span class="line">   stack should have only one value in it, which is the final result.</span><br></pre></td></tr></table></figure></p>
+<p>Here is the python code.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">applyOp</span><span class="params">(op,a,b)</span>:</span></span><br><span class="line">    <span class="string">'''</span><br><span class="line">    A utility method to apply an operator 'op' on operands 'a' </span><br><span class="line">    and 'b'. Return the result.</span><br><span class="line">    '''</span></span><br><span class="line">    <span class="keyword">if</span> op==<span class="string">"+"</span>:</span><br><span class="line">        <span class="keyword">return</span> a+b</span><br><span class="line">    <span class="keyword">elif</span> op==<span class="string">"-"</span>:</span><br><span class="line">        <span class="keyword">return</span> b-a</span><br><span class="line">    <span class="keyword">elif</span> op==<span class="string">"*"</span>:</span><br><span class="line">        <span class="keyword">return</span> a*b</span><br><span class="line">    <span class="keyword">elif</span> op==<span class="string">"/"</span>:</span><br><span class="line">        <span class="keyword">return</span> b//a</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hasPrecedence</span><span class="params">(op1,op2)</span>:</span></span><br><span class="line">    <span class="string">'''</span><br><span class="line">    // Returns true if 'op2' has higher or same precedence as 'op1',</span><br><span class="line">    // otherwise returns false.</span><br><span class="line">    '''</span></span><br><span class="line">    <span class="keyword">if</span> op2==<span class="string">"("</span> <span class="keyword">or</span> op2==<span class="string">")"</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">if</span> (op1==<span class="string">"*"</span> <span class="keyword">or</span> op1==<span class="string">"/"</span>) <span class="keyword">and</span> (op2==<span class="string">"+"</span> <span class="keyword">or</span> op2==<span class="string">"-"</span>):</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">False</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">True</span></span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">evaluate</span><span class="params">(string)</span>:</span></span><br><span class="line">    values=[]</span><br><span class="line">    ops=[]</span><br><span class="line">    index=<span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> index&lt;len(string):</span><br><span class="line">        <span class="keyword">if</span> string[index]==<span class="string">" "</span>:</span><br><span class="line">            index+=<span class="number">1</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        <span class="keyword">if</span> string[index].isdigit():</span><br><span class="line">            start=index</span><br><span class="line">            <span class="keyword">while</span> index&lt;len(string) <span class="keyword">and</span> string[index].isdigit():</span><br><span class="line">                index+=<span class="number">1</span></span><br><span class="line">            values.append(int(string[start:index]))</span><br><span class="line">        <span class="keyword">elif</span> string[index]==<span class="string">"("</span>:</span><br><span class="line">            ops.append(string[index])</span><br><span class="line">            index+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> string[index]==<span class="string">")"</span>:</span><br><span class="line">            <span class="keyword">while</span> ops[<span class="number">-1</span>]!=<span class="string">"("</span>:</span><br><span class="line">                values.append(applyOp(ops.pop(),values.pop(),values.pop()))</span><br><span class="line">            ops.pop()</span><br><span class="line">            index+=<span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> string[index] <span class="keyword">in</span> [<span class="string">"+"</span>,<span class="string">"-"</span>,<span class="string">"*"</span>,<span class="string">"/"</span>]:</span><br><span class="line">            <span class="keyword">while</span> ops <span class="keyword">and</span> hasPrecedence(string[index],ops[<span class="number">-1</span>]):</span><br><span class="line">                values.append(applyOp(ops.pop(),values.pop(),values.pop()))</span><br><span class="line">            ops.append(string[index])</span><br><span class="line">            index+=<span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> ops:</span><br><span class="line">        values.append(applyOp(ops.pop(),values.pop(),values.pop()))</span><br><span class="line">    <span class="keyword">return</span> values.pop()</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -306,13 +293,13 @@ XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
   
     
     <div class="copyright">
-        <p><span>Title:</span><a href="/2016/03/17/WebDevelopment/enable-ajax-cors/">Enable Ajax CORS(Cross-Origin Resource Sharing)</a></p>
+        <p><span>Title:</span><a href="/2016/04/03/Algorithm/Expression-evaluation/">Expression Evaluation</a></p>
         <p><span>Author:</span><a href="/" title="Go to Darren Cheng's blog">Darren Cheng</a></p>
-        <p><span>Publish Date:</span>03/17/2016 - 16:57</p>
-        <p><span>Update Date:</span>03/18/2016 - 21:17</p>
+        <p><span>Publish Date:</span>04/03/2016 - 23:37</p>
+        <p><span>Update Date:</span>04/03/2016 - 23:50</p>
         <p>
-            <span>Original Like:</span><a class="post-url" href="/2016/03/17/WebDevelopment/enable-ajax-cors/" title="Enable Ajax CORS(Cross-Origin Resource Sharing)">http://darrencheng0817.github.io/2016/03/17/WebDevelopment/enable-ajax-cors/</a>
-            <span class="copy-path" data-clipboard-text="page: http://darrencheng0817.github.io/2016/03/17/WebDevelopment/enable-ajax-cors/　　author: Darren Cheng" title="copy the link"><i class="fa fa-clipboard"></i></span>
+            <span>Original Like:</span><a class="post-url" href="/2016/04/03/Algorithm/Expression-evaluation/" title="Expression Evaluation">http://darrencheng0817.github.io/2016/04/03/Algorithm/Expression-evaluation/</a>
+            <span class="copy-path" data-clipboard-text="page: http://darrencheng0817.github.io/2016/04/03/Algorithm/Expression-evaluation/　　author: Darren Cheng" title="copy the link"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -325,16 +312,10 @@ XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
 
     <nav id="article-nav">
         
-            <div id="article-nav-newer" class="article-nav-title">
-                <a href="/2016/03/23/WebDevelopment/embed-HTML-tags-in-Hexo-markdown/">
-                    Embed HTML tags in Hexo markdown
-                </a>
-            </div>
-        
         
             <div id="article-nav-older" class="article-nav-title">
-                <a href="/2016/03/16/Other/announcement/">
-                    Announcement
+                <a href="/2016/04/01/Algorithm/Tree-traversal/">
+                    Tree traversal
                 </a>
             </div>
         
@@ -417,15 +398,13 @@ XMLHttpRequest cannot load . No ‘Access-Control-Allow-Origin’ header">
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/03/23/WebDevelopment/embed-HTML-tags-in-Hexo-markdown/" title="上一篇: Embed HTML tags in Hexo markdown">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
 
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
 
         
-            <a href="/2016/03/16/Other/announcement/" title="下一篇: Announcement">
+            <a href="/2016/04/01/Algorithm/Tree-traversal/" title="下一篇: Tree traversal">
                 <i class="fa fa-angle-right"></i>
             </a>
         
