@@ -39,7 +39,7 @@
 </div> <!-- /container -->
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script type="text/javascript">
-    var socket = io("https://www.darrenlife.com:4040");
+    var socket = io("http://www.darrenlife.com:4040");
     var pre="";
     $('#restart').hide();
     $("#confirm").hide();
