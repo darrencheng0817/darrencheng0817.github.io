@@ -4,6 +4,89 @@
   
     
     <entry>
+      <title><![CDATA[Chinese Idioms Solitaire]]></title>
+      <url>http://darrencheng0817.github.io/2016/04/11/WebDevelopment/solitaire-idiom/</url>
+      <content type="html"><![CDATA[<p>Chinese Idioms Solitaire is a very interesting Puzzle. Two players start with a idiom and take turns to come up with a new idiom whose first word match exactly with the last word of the previous idiom. The one could not come up with a followed idiom lose.</p>
+<p>I build up a game agent using socket.io that could play such game with you. Please try!<br><a id="more"></a></p>
+<p>成语接龙是一个非常有趣的益智游戏。两人轮流接龙，后一个成语的首字必须与前一个成语的末字吻合。无法接龙者失败。</p>
+<p>我用socket.io写了一个程序，来和它比试比试吧！<br>
+<div class="container-fluid">
+    <div class="alert alert-info" role="alert" id="chengyu_message"></div>
+    <div class="row" id="confirm">
+        <div class="col-md-6">
+            <button class="btn btn-primary btn-block" id="exist" type="button">真的有</button>
+        </div>
+        <div class="col-md-6">
+            <button class="btn btn-primary btn-block" id="nevermind" type="button">我写错了</button>
+        </div>
+    </div>
+    <textarea class="form-control" id="chengyu_data" rows="10" cols="30" disabled> </textarea>
+    <br>
+    <div class="row" id="input_row">
+        <div class="col-md-8">
+            <input type="text" id="chengyu_input" class="form-control" placeholder="成语" required>
+        </div>
+        <div class="col-md-4">
+            <button class="btn btn-primary btn-block" id="submit" type="submit">提交</button>
+        </div>
+    </div>
+    <div class="row">    
+        <div class="col-md-12">
+            <button class="btn btn-primary btn-block" id="restart" type="button">再来一次</button>
+        </div>
+    </div>
+</div> <!-- /container -->
+<script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
+<script type="text/javascript">
+    var socket = io("http://www.darrenlife.com:4040");
+    var pre="";
+    $('#restart').hide();
+    $("#confirm").hide();
+    $('#submit').click(function(){
+        if($('#chengyu_input').val().length==0){
+            $('#chengyu_message').html("你什么都没有输入哦！");
+        }
+        else{
+            $("#confirm").hide();
+            pre=$('#chengyu_input').val();
+            socket.emit('chengyu_input', $('#chengyu_input').val(),false);
+        }
+    });
+    socket.on('response', function(code,msg,result){
+        if(code=="notexist"){
+            $("#confirm").show();
+        }
+        if(code=="win"){
+            $('#input_row').hide();
+            $('#restart').show();
+        }
+        $('#chengyu_message').html(msg);
+        $('#chengyu_data').val(result);
+        $('#chengyu_input').val(result[result.length-1]);
+
+    });
+    $("#exist").click(function(){
+        socket.emit('chengyu_input', pre,true);
+        $("#confirm").hide();
+    });
+    $("#nevermind").click(function(){
+        $("#confirm").hide();
+        $('#chengyu_message').html("那你重新输入一次吧！");
+    });
+    $('#restart').click(function(){
+        socket.emit('restart');
+        $('#input_row').show();
+        $('#restart').hide();
+        $('#chengyu_data').val("");
+        $('#chengyu_input').val("");
+        $('#chengyu_message').html("这次我一定能赢！");
+    });
+</script>
+</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[Expression Evaluation]]></title>
       <url>http://darrencheng0817.github.io/2016/04/03/Algorithm/Expression-evaluation/</url>
       <content type="html"><![CDATA[<hr>
@@ -345,6 +428,12 @@ padding: 0;
     </entry>
     
     <entry>
+      <title><![CDATA[tags]]></title>
+      <url>http://darrencheng0817.github.io/tags/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[About]]></title>
       <url>http://darrencheng0817.github.io/about/index.html</url>
       <content type="html"><![CDATA[<hr>
@@ -379,12 +468,6 @@ padding: 0;
       <content type="html"><![CDATA[<hr>
 <p>Current master student in University of California. Full-stack developer.</p>
 ]]></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://darrencheng0817.github.io/tags/index.html</url>
-      <content type="html"></content>
     </entry>
     
   
