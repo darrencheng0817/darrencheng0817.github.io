@@ -9,7 +9,8 @@
       <content type="html"><![CDATA[<p>Chinese Idioms Solitaire is a very interesting Puzzle. Two players start with a idiom and take turns to come up with a new idiom whose first word match exactly with the last word of the previous idiom. The one could not come up with a followed idiom lose.</p>
 <p>I build up a game agent using socket.io that could play such game with you. Please try!<br><a id="more"></a></p>
 <p>成语接龙是一个非常有趣的益智游戏。两人轮流接龙，后一个成语的首字必须与前一个成语的末字吻合。无法接龙者失败。</p>
-<p>我用socket.io写了一个程序，来和它比试比试吧！<br>
+<p>我用socket.io写了一个程序，来和它比试比试吧！</p>
+<p>I don’t have a trusted certificate for my server currently. So if it is blocked due to the mixed content error, please go <a href="http://darrencheng.coding.me/2016/04/11/WebDevelopment/solitaire-idiom/" target="_blank" rel="external">here</a>!<br>
 <div class="container-fluid">
     <div class="alert alert-info" role="alert" id="chengyu_message"></div>
     <div class="row" id="confirm">
@@ -38,7 +39,7 @@
 </div> <!-- /container -->
 <script src="https://cdn.socket.io/socket.io-1.4.5.js"></script>
 <script type="text/javascript">
-    var socket = io("http://www.darrenlife.com:4040");
+    var socket = io("https://www.darrenlife.com:4040");
     var pre="";
     $('#restart').hide();
     $("#confirm").hide();
@@ -428,12 +429,6 @@ padding: 0;
     </entry>
     
     <entry>
-      <title><![CDATA[tags]]></title>
-      <url>http://darrencheng0817.github.io/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
       <title><![CDATA[About]]></title>
       <url>http://darrencheng0817.github.io/about/index.html</url>
       <content type="html"><![CDATA[<hr>
@@ -468,6 +463,12 @@ padding: 0;
       <content type="html"><![CDATA[<hr>
 <p>Current master student in University of California. Full-stack developer.</p>
 ]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[tags]]></title>
+      <url>http://darrencheng0817.github.io/tags/index.html</url>
+      <content type="html"></content>
     </entry>
     
   
